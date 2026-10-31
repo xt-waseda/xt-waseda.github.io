@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Te Xiao — Biomedical Sensors &amp; Engineering</title>
+<meta name="description" content="Personal homepage of Te Xiao — biomedical sensors, smart contact lenses, flexible electronics, and wireless sensing. Not an official Waseda University page.">
+<!-- PHASE 1 ONLY: keep the site out of search indexes while content is still
+     being completed. This is not access control — the site is public. Remove
+     this line in Phase 3 once the content is final. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#08243B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308243B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23FBFAF8' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body id="home">
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home">
+      <b>Te Xiao</b>
+      <span>Biomedical Sensors</span>
+    </a>
+
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="navlinks">MENU</button>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#activities">Activities &amp; Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="lang" aria-label="Language">
+      <b title="English">EN</b><span aria-disabled="true" title="Not published yet">中文</span><span aria-disabled="true" title="Not published yet">日本語</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ UNIVERSITY BANNER ============ -->
+<section class="banner">
+  <div class="wrap banner-inner">
+    <p class="eyebrow">Waseda University · Engineering R&amp;D</p>
+    <h1>Te Xiao</h1>
+    <p class="sub">Biomedical sensors, smart contact lenses, and wireless readout systems.</p>
+    <span class="disc"><i></i>Personal website — not an official Waseda University page</span>
+  </div>
+
+  <span class="banner-credit" id="banner-credit"></span>
+</section>
+
+<!-- ============ HOME / INTRO ============ -->
+<section class="intro wrap">
+  <div class="intro-grid">
+    <div class="portrait">
+      <div class="ph"><b>Portrait</b></div>
+    </div>
+
+    <div class="intro-body">
+      <p class="kicker">Research profile</p>
+      <h2 id="intro-headline">From Flexible Sensors to Wireless Biomedical Systems.</h2>
+
+      <div id="intro-text">
+        <p>Loading profile…</p>
+      </div>
+
+      <div class="intro-actions">
+        <a class="btn p" href="#projects">View projects <span class="ar">→</span></a>
+        <a class="btn s" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <dl class="facts" id="facts"></dl>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section wrap" id="about">
+  <div class="sec-head reveal">
+    <span class="num">§ 01</span>
+    <h2>About</h2>
+    <span class="rule"></span>
+    <span class="aside">Education &amp; research background</span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-paras reveal" id="about-paras"></div>
+
+    <div class="reveal">
+      <div class="side-block">
+        <p class="side-title">Education</p>
+        <ul class="edu" id="about-education"></ul>
+      </div>
+      <div class="side-block">
+        <p class="side-title">Research interests</p>
+        <div class="interests" id="about-interests"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section wrap" id="projects">
+  <div class="sec-head reveal">
+    <span class="num">§ 02</span>
+    <h2>Projects</h2>
+    <span class="rule"></span>
+    <span class="aside">One program · three layers</span>
+  </div>
+
+  <div class="cards" id="projects-grid"></div>
+
+  <!-- technical thread that ties the three cards together (content/projects.json → thread) -->
+  <div class="thread reveal" id="projects-thread"></div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="section wrap" id="publications">
+  <div class="sec-head reveal">
+    <span class="num">§ 03</span>
+    <h2>Publications</h2>
+    <span class="rule"></span>
+    <span class="aside">Peer-reviewed work</span>
+  </div>
+
+  <ol class="pubs reveal" id="pubs-list"></ol>
+</section>
+
+<!-- ============ ACTIVITIES & AWARDS ============ -->
+<section class="section wrap" id="activities">
+  <div class="sec-head reveal">
+    <span class="num">§ 04</span>
+    <h2>Activities &amp; Awards</h2>
+    <span class="rule"></span>
+    <span class="aside">Reverse chronological</span>
+  </div>
+
+  <div class="sub-block reveal">
+    <div class="sub-title">
+      <h3>Activities</h3>
+      <span class="count">Conferences · Events · Research · News</span>
+    </div>
+    <div class="tl" id="activities-list"></div>
+
+    <div class="more-row" id="act-more">
+      <button class="more-btn" id="act-toggle" type="button"
+              aria-expanded="false" aria-controls="activities-list">View all activities</button>
+    </div>
+  </div>
+
+  <div class="sub-block reveal">
+    <div class="sub-title">
+      <h3>Awards &amp; Scholarships</h3>
+      <span class="count">Honours</span>
+    </div>
+    <ul class="awards" id="awards-list"></ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section wrap" id="contact">
+  <div class="sec-head reveal">
+    <span class="num">§ 05</span>
+    <h2>Contact</h2>
+    <span class="rule"></span>
+    <span class="aside">Direct contact to be added</span>
+  </div>
+
+  <div class="contact reveal">
+    <div>
+      <h3>Get in touch</h3>
+      <p>For research collaboration, device prototyping, or questions about the work shown here.</p>
+      <div id="contact-email"><a class="mailto">Loading…</a></div>    </div>
+    <div>
+      <p class="side-title">Elsewhere</p>
+      <ul class="links" id="contact-links"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap foot">
+    <p class="disc" id="foot-note">
+      This is a personal homepage. The views and materials presented here are personal and do not
+      represent the official position of Waseda University or any affiliated laboratory.
+    </p>
+    <div class="r">
+      <b id="foot-copy">© 2026 Te Xiao</b>
+      <span id="foot-built">Plain HTML / CSS / JavaScript · hosted on GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

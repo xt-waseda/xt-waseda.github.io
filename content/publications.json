@@ -1,0 +1,28 @@
+{
+  "publications": [
+    {
+      "date": "2026",
+      "type": "journal",
+      "title": "Ultra-sensitive real-time monitoring of intraocular pressure with an integrated smart contact lens using parity-time symmetry wireless technology",
+      "authors": "T. Xiao, H. Zhang, T. Takamatsu, A. Ashimori, S. Azhari, K. Kimura, T. Miyake — co-first author with H. Zhang",
+      "venue": "npj Flexible Electronics, 10, Article 4",
+      "link": "https://doi.org/10.1038/s41528-025-00507-3"
+    },
+    {
+      "date": "2026",
+      "type": "journal",
+      "title": "Enhanced Sensitivity of Real-Time Intraocular Pressure Monitoring by Integration of a Wrinkled Gold-Based Capacitive Sensor with Parity-Time Symmetry Wireless Technology",
+      "authors": "T. Xiao, Z. Chen, H. Zhang, B. Liu, T. Takamatsu, S. Azhari, T. Miyake — first author",
+      "venue": "ACS Sensors, 11(4), 3274–3286",
+      "link": "https://doi.org/10.1021/acssensors.5c04736"
+    },
+    {
+      "date": "2022",
+      "type": "journal",
+      "title": "Electrochromic soft contact lenses with built-in non-interfering, high-efficient dual-band wireless power transfer system",
+      "authors": "L. Hu, L. Chen, N. Du, T. Takamatsu, T. Xiao, T. Miyake — fifth author",
+      "venue": "Sensors and Actuators A: Physical, 344, 113766",
+      "link": "https://doi.org/10.1016/j.sna.2022.113766"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "profile": {
+    "name": "Te Xiao",
+    "nameLocal": "肖 特",
+    "role": "Doctoral Researcher · Biomedical Sensors",
+    "affiliation": "Waseda University",
+    "headline": "From Flexible Sensors to Wireless Biomedical Systems.",
+    "intro": [
+      "I am a doctoral researcher at the Graduate School of Information, Production and Systems, Waseda University, working on smart contact lens systems for intraocular pressure monitoring.",
+      "My work covers the chain from device to data: fabricating resistive and capacitive sensing films, building ultrathin gold antennas, characterising them with VNA and LCR meters, and validating the assembled lens on porcine and rabbit eyes."
+    ],
+    "facts": [
+      { "label": "Research focus", "value": "Smart contact lenses", "sub": "IOP monitoring" },
+      { "label": "Methods", "value": "Flexible electronics", "sub": "Resistive / capacitive" },
+      { "label": "Readout", "value": "Wireless sensing", "sub": "PT symmetric telemetry" },
+      { "label": "Funding", "value": "AMED-supported", "sub": "project participant" }
+    ],
+    "about": {
+      "paragraphs": [
+        "I work on biomedical sensing devices at Waseda University. The research integrates a flexible sensing film into a soft contact lens and reads it out wirelessly, so that intraocular pressure can be tracked over time rather than captured once in a clinic.",
+        "The readout is where the difficulty sits. A passive resonator sitting on a wet, curved, constantly moving surface is easily detuned, and the signal it returns is small. My work uses parity-time symmetry to sharpen that resonance, which is what makes a usable resolution possible without putting a battery on the lens.",
+        "I work across the full chain — sensor fabrication, antenna and resonator design in HFSS, bench characterisation with VNA and LCR meters, data analysis in MATLAB, and experimental validation including animal experiments. The aim is to keep the gap small between what a paper claims and what a prototype can actually demonstrate."
+      ],
+      "education": [
+        {
+          "period": "2020.04–",
+          "degree": "Doctoral Program, Information, Production and Systems Engineering",
+          "org": "Waseda University · Graduate School of Information, Production and Systems",
+          "note": "Present · Doctor of Engineering expected March 2027"
+        },
+        {
+          "period": "2018.04–2020.03",
+          "degree": "Master's degree",
+          "org": "Waseda University · Graduate School of Information, Production and Systems",
+          "note": "Degree awarded March 2020"
+        },
+        {
+          "period": "2011.09–2015.06",
+          "degree": "B.Sc. Mathematics and Applied Mathematics",
+          "org": "China University of Mining and Technology, Beijing",
+          "note": ""
+        }
+      ],
+      "interests": [
+        "Smart Contact Lenses",
+        "Biomedical Sensors",
+        "Flexible Electronics",
+        "Wireless Sensing",
+        "Device Fabrication",
+        "Engineering R&D"
+      ]
+    },
+    "contact": {
+      "status": "coming_soon",
+      "email": "",
+      "emailNote": "Direct contact details are being finalised and will be published here."
+    }
+  }
+}

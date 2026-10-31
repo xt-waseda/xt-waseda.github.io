@@ -1,0 +1,61 @@
+{
+  "thread": {
+    "label": "Program thread",
+    "chain": [
+      {
+        "name": "Flexible transducer",
+        "fig": "03"
+      },
+      {
+        "name": "PT-symmetric readout",
+        "fig": "02"
+      },
+      {
+        "name": "Integrated lens system",
+        "fig": "01"
+      }
+    ],
+    "note": "The three figures are layers of one program, not three separate projects. FIG. 03 builds the transducer that produces the capacitance change; FIG. 02 is the readout that makes such a small change resolvable without a battery on the lens; FIG. 01 is the integrated system where both are assembled and validated ex vivo and in vivo."
+  },
+  "projects": [
+    {
+      "kicker": "AMED · IOP",
+      "title": "Smart contact lens for continuous intraocular pressure monitoring",
+      "summary": "A flexible resistive sensing film integrated into a soft contact lens and read out through an ultrathin gold antenna, so intraocular pressure can be followed continuously instead of captured once in a clinic. Lens readings are validated against a commercial tonometer ex vivo (porcine) and in vivo (rabbit). Developed within an AMED-supported medical-device R&D project; the funding is project-level, not a personal grant.",
+      "tags": [
+        "Flexible sensor",
+        "In vitro + in vivo",
+        "Wireless"
+      ],
+      "image": "",
+      "link": "",
+      "year": "2025–2026"
+    },
+    {
+      "kicker": "Wireless readout",
+      "title": "PT-symmetric passive readout for battery-free sensing",
+      "summary": "Parity-time symmetric coupling sharpens the resonance of an otherwise low-Q passive tag, turning a small capacitance shift into a resolvable measurement. The approach is what allows a passive resonator on a wet, curved surface to be read without putting a battery on the lens.",
+      "tags": [
+        "PT symmetry",
+        "HFSS",
+        "Passive tag"
+      ],
+      "image": "",
+      "link": "",
+      "year": "2026"
+    },
+    {
+      "kicker": "Fabrication",
+      "title": "Resistive and capacitive flexible transducers",
+      "summary": "PEDOT-based resistive films and wrinkled-gold capacitive sensors, built with photolithography, spin coating, gold deposition, electroplating and laser processing, then characterised electrically and validated on the bench and in animal experiments.",
+      "tags": [
+        "Device fabrication",
+        "Characterisation",
+        "Materials"
+      ],
+      "image": "",
+      "link": "",
+      "year": ""
+    }
+  ]
+}

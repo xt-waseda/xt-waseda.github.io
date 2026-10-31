@@ -1,0 +1,28 @@
+{
+  "site": {
+    "lang": "en",
+    "title": "Te Xiao — Biomedical Sensors & Engineering",
+    "brand": "Te Xiao",
+    "brandSub": "Biomedical Sensors",
+    "languages": ["EN", "中文", "日本語"],
+    "banner": {
+      "image": "",
+      "alt": "Waseda University campus",
+      "position": "center 45%",
+      "credit": "",
+      "eyebrow": "Waseda University · Engineering R&D",
+      "headline": "Te Xiao",
+      "subline": "Biomedical sensors, smart contact lenses, and wireless readout systems",
+      "disclaimer": "Personal website — not an official Waseda University page"
+    },
+    "portrait": {
+      "image": "",
+      "alt": "Portrait of Te Xiao"
+    },
+    "footer": {
+      "note": "This is a personal homepage. The views and materials presented here are personal and do not represent the official position of Waseda University or any affiliated laboratory.",
+      "copyright": "© 2026 Te Xiao",
+      "builtwith": "Plain HTML / CSS / JavaScript · hosted on GitHub Pages"
+    }
+  }
+}
