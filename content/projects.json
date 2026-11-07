@@ -1,61 +1,68 @@
 {
-  "thread": {
-    "label": "Program thread",
-    "chain": [
-      {
-        "name": "Flexible transducer",
-        "fig": "03"
-      },
-      {
-        "name": "PT-symmetric readout",
-        "fig": "02"
-      },
-      {
-        "name": "Integrated lens system",
-        "fig": "01"
-      }
-    ],
-    "note": "The three figures are layers of one program, not three separate projects. FIG. 03 builds the transducer that produces the capacitance change; FIG. 02 is the readout that makes such a small change resolvable without a battery on the lens; FIG. 01 is the integrated system where both are assembled and validated ex vivo and in vivo."
-  },
   "projects": [
     {
-      "kicker": "AMED · IOP",
-      "title": "Smart contact lens for continuous intraocular pressure monitoring",
-      "summary": "A flexible resistive sensing film integrated into a soft contact lens and read out through an ultrathin gold antenna, so intraocular pressure can be followed continuously instead of captured once in a clinic. Lens readings are validated against a commercial tonometer ex vivo (porcine) and in vivo (rabbit). Developed within an AMED-supported medical-device R&D project; the funding is project-level, not a personal grant.",
-      "tags": [
-        "Flexible sensor",
-        "In vitro + in vivo",
-        "Wireless"
+      "title": "Smart Contact Lens for Intraocular Pressure Monitoring",
+      "paragraphs": [
+        "This AMED-supported research focuses on real-time intraocular pressure monitoring using smart contact lenses.",
+        "The system integrates flexible PEDOT-based resistive sensors and wrinkled-gold capacitive sensors with parity–time (PT)-symmetric wireless readout. Antenna design and electromagnetic simulation were performed using HFSS, while sensor and wireless performance were evaluated through VNA and LCR measurements.",
+        "The sensors were integrated into hydrogel contact lenses in collaboration with Vizionfocus, followed by experimental validation using ex vivo porcine eyes and in vivo rabbit eyes.",
+        "The research led to publications in npj Flexible Electronics and ACS Sensors and an accepted paper in Advanced Materials Technologies. Waseda University also featured the research."
       ],
-      "image": "",
-      "link": "",
-      "year": "2025–2026"
-    },
-    {
-      "kicker": "Wireless readout",
-      "title": "PT-symmetric passive readout for battery-free sensing",
-      "summary": "Parity-time symmetric coupling sharpens the resonance of an otherwise low-Q passive tag, turning a small capacitance shift into a resolvable measurement. The approach is what allows a passive resonator on a wet, curved surface to be read without putting a battery on the lens.",
       "tags": [
+        "PEDOT resistive sensors",
+        "Wrinkled-gold capacitive sensors",
         "PT symmetry",
         "HFSS",
-        "Passive tag"
+        "VNA / LCR"
       ],
-      "image": "",
-      "link": "",
-      "year": "2026"
+      "links": [
+        {
+          "label": "npj Flexible Electronics",
+          "href": "https://doi.org/10.1038/s41528-025-00507-3"
+        },
+        {
+          "label": "ACS Sensors",
+          "href": "https://doi.org/10.1021/acssensors.5c04736"
+        },
+        {
+          "label": "Advanced Materials Technologies",
+          "href": "#publication-wrinkled-gold-antenna"
+        },
+        {
+          "label": "Waseda University research feature",
+          "href": "https://www.waseda.jp/top/en/news/87095"
+        }
+      ]
     },
     {
-      "kicker": "Fabrication",
-      "title": "Resistive and capacitive flexible transducers",
-      "summary": "PEDOT-based resistive films and wrinkled-gold capacitive sensors, built with photolithography, spin coating, gold deposition, electroplating and laser processing, then characterised electrically and validated on the bench and in animal experiments.",
-      "tags": [
-        "Device fabrication",
-        "Characterisation",
-        "Materials"
+      "title": "Wireless Smart Contact Lens for Eye-Movement Recognition",
+      "paragraphs": [
+        "My current research explores wireless smart contact lenses for eye-movement recognition using flexible sensors.",
+        "We fabricate flexible sensors and microscale devices, then measure their electrical and wireless responses. The measurements guide the design of the sensing system."
       ],
-      "image": "",
-      "link": "",
-      "year": ""
+      "tags": [
+        "Flexible sensors",
+        "Microfabrication",
+        "Wireless sensing"
+      ]
+    },
+    {
+      "title": "Flexible Antenna and Wireless Power Transfer",
+      "paragraphs": [
+        "For my master’s research, we fabricated flexible wrinkled-gold antennas and chemically bonded them to commercial soft contact lenses. The aim was to deliver power wirelessly to electronics on the lens.",
+        "Wireless power transfer was demonstrated by illuminating an LED integrated into the contact lens."
+      ],
+      "tags": [
+        "Wrinkled gold",
+        "Chemical bonding",
+        "Wireless power transfer"
+      ],
+      "links": [
+        {
+          "label": "Sensors and Actuators A: Physical",
+          "href": "https://doi.org/10.1016/j.sna.2022.113766"
+        }
+      ]
     }
   ]
 }

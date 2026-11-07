@@ -3,12 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Te Xiao — Biomedical Sensors &amp; Engineering</title>
-<meta name="description" content="Personal homepage of Te Xiao — biomedical sensors, smart contact lenses, flexible electronics, and wireless sensing. Not an official Waseda University page.">
-<!-- PHASE 1 ONLY: keep the site out of search indexes while content is still
-     being completed. This is not access control — the site is public. Remove
-     this line in Phase 3 once the content is final. -->
-<meta name="robots" content="noindex">
+<title>Te Xiao | Flexible Biosensors &amp; Wireless Sensing</title>
+<meta name="description" content="Personal research website of Te Xiao at Waseda University, focusing on flexible biosensors, smart contact lenses, and wireless sensing systems.">
+<link rel="canonical" href="https://xt-waseda.github.io/">
+<meta property="og:title" content="Te Xiao | Flexible Biosensors &amp; Wireless Sensing">
+<meta property="og:description" content="Personal research website of Te Xiao at Waseda University, focusing on flexible biosensors, smart contact lenses, and wireless sensing systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xt-waseda.github.io/">
+<meta property="og:image" content="https://xt-waseda.github.io/assets/images/te-xiao-portrait.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="540">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Portrait of Te Xiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Te Xiao | Flexible Biosensors &amp; Wireless Sensing">
+<meta name="twitter:description" content="Personal research website of Te Xiao at Waseda University, focusing on flexible biosensors, smart contact lenses, and wireless sensing systems.">
+<meta name="twitter:image" content="https://xt-waseda.github.io/assets/images/te-xiao-portrait.jpg">
+<meta name="twitter:image:alt" content="Portrait of Te Xiao">
 <meta name="theme-color" content="#08243B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308243B'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23FBFAF8' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -21,22 +32,24 @@
   <div class="wrap nav-in">
     <a class="brand" href="#home">
       <b>Te Xiao</b>
-      <span>Biomedical Sensors</span>
+      <span data-copy="brand">Biomedical Sensors</span>
     </a>
 
-    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="navlinks">MENU</button>
+    <button class="menu-btn" id="menu-btn" type="button" data-copy="menu" aria-expanded="false" aria-controls="navlinks">MENU</button>
 
-    <nav class="navlinks" id="navlinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#activities">Activities &amp; Awards</a>
-      <a href="#contact">Contact</a>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation" data-label="nav">
+      <a href="#home" data-copy="home">Home</a>
+      <a href="#about" data-copy="about">About</a>
+      <a href="#projects" data-copy="research">Research</a>
+      <a href="#publications" data-copy="publications">Publications</a>
+      <a href="#activities" data-copy="activities">Activities &amp; Awards</a>
+      <a href="#contact" data-copy="contact">Contact</a>
     </nav>
 
-    <div class="lang" aria-label="Language">
-      <b title="English">EN</b><span aria-disabled="true" title="Not published yet">中文</span><span aria-disabled="true" title="Not published yet">日本語</span>
+    <div class="lang" role="group" aria-label="Site language" data-label="language">
+      <button type="button" lang="en" data-locale="en" aria-pressed="true" aria-label="English">EN</button>
+      <button type="button" lang="zh-Hans" data-locale="zh-Hans" aria-pressed="false">中文</button>
+      <button type="button" lang="ja" data-locale="ja" aria-pressed="false">日本語</button>
     </div>
   </div>
 </header>
@@ -44,24 +57,21 @@
 <!-- ============ UNIVERSITY BANNER ============ -->
 <section class="banner">
   <div class="wrap banner-inner">
-    <p class="eyebrow">Waseda University · Engineering R&amp;D</p>
+    <p class="eyebrow" data-copy="eyebrow">Waseda University · Bioelectronics</p>
     <h1>Te Xiao</h1>
-    <p class="sub">Biomedical sensors, smart contact lenses, and wireless readout systems.</p>
-    <span class="disc"><i></i>Personal website — not an official Waseda University page</span>
+    <p class="sub">Medical-device R&amp;D, flexible biosensors, and wireless sensing.</p>
   </div>
-
-  <span class="banner-credit" id="banner-credit"></span>
 </section>
 
 <!-- ============ HOME / INTRO ============ -->
 <section class="intro wrap">
   <div class="intro-grid">
     <div class="portrait">
-      <div class="ph"><b>Portrait</b></div>
+      <div class="ph"><b data-copy="portrait">Portrait</b></div>
     </div>
 
     <div class="intro-body">
-      <p class="kicker">Research profile</p>
+      <p class="kicker" data-copy="portfolio">Research &amp; Engineering Portfolio</p>
       <h2 id="intro-headline">From Flexible Sensors to Wireless Biomedical Systems.</h2>
 
       <div id="intro-text">
@@ -69,8 +79,8 @@
       </div>
 
       <div class="intro-actions">
-        <a class="btn p" href="#projects">View projects <span class="ar">→</span></a>
-        <a class="btn s" href="#contact">Contact</a>
+        <a class="btn p" href="#projects"><span data-copy="viewResearch">View research</span> <span class="ar">→</span></a>
+        <a class="btn s" href="#contact" data-copy="contact">Contact</a>
       </div>
     </div>
   </div>
@@ -82,80 +92,89 @@
 <section class="section wrap" id="about">
   <div class="sec-head reveal">
     <span class="num">§ 01</span>
-    <h2>About</h2>
+    <h2 data-copy="about">About</h2>
     <span class="rule"></span>
-    <span class="aside">Education &amp; research background</span>
+    <span class="aside" data-copy="educationBackground">Education &amp; research background</span>
   </div>
 
   <div class="about-grid">
-    <div class="about-paras reveal" id="about-paras"></div>
+    <div class="reveal">
+      <div class="about-paras" id="about-paras"></div>
+      <p class="about-affiliation"><span data-copy="researchGroupLabel">Research Group: </span><a href="https://miyake.w.waseda.jp/" target="_blank" rel="noopener noreferrer"><span data-copy="researchGroupName">Miyake Research Group</span> <span aria-hidden="true">↗</span></a></p>
+    </div>
 
     <div class="reveal">
       <div class="side-block">
-        <p class="side-title">Education</p>
+        <p class="side-title" data-copy="education">Education</p>
         <ul class="edu" id="about-education"></ul>
-      </div>
-      <div class="side-block">
-        <p class="side-title">Research interests</p>
-        <div class="interests" id="about-interests"></div>
       </div>
     </div>
   </div>
+
+  <div class="sub-block reveal" id="technical-skills">
+    <div class="sub-title"><h3 data-copy="skills">Technical Skills</h3></div>
+    <dl class="skills" id="about-skills"></dl>
+  </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
+<!-- ============ RESEARCH ============ -->
 <section class="section wrap" id="projects">
   <div class="sec-head reveal">
     <span class="num">§ 02</span>
-    <h2>Projects</h2>
+    <h2 data-copy="research">Research</h2>
     <span class="rule"></span>
-    <span class="aside">One program · three layers</span>
+    <span class="aside" data-copy="deviceRD">Biomedical device R&amp;D</span>
   </div>
 
-  <div class="cards" id="projects-grid"></div>
-
-  <!-- technical thread that ties the three cards together (content/projects.json → thread) -->
-  <div class="thread reveal" id="projects-thread"></div>
+  <ol class="research-list" id="research-list"></ol>
 </section>
 
 <!-- ============ PUBLICATIONS ============ -->
 <section class="section wrap" id="publications">
   <div class="sec-head reveal">
     <span class="num">§ 03</span>
-    <h2>Publications</h2>
+    <h2 data-copy="publications">Publications</h2>
     <span class="rule"></span>
-    <span class="aside">Peer-reviewed work</span>
+    <span class="aside" data-copy="journalArticles">Journal articles</span>
   </div>
 
+  <div class="reference-controls">
+    <div class="more-row" hidden>
+      <button class="more-btn" id="pub-toggle" type="button"
+              aria-expanded="false" aria-controls="pubs-list">View all publications (5)</button>
+    </div>
+  </div>
   <ol class="pubs reveal" id="pubs-list"></ol>
+  <p class="pub-footnote" id="pub-equal-note" hidden></p>
 </section>
 
 <!-- ============ ACTIVITIES & AWARDS ============ -->
 <section class="section wrap" id="activities">
   <div class="sec-head reveal">
     <span class="num">§ 04</span>
-    <h2>Activities &amp; Awards</h2>
+    <h2 data-copy="activities">Activities &amp; Awards</h2>
     <span class="rule"></span>
-    <span class="aside">Reverse chronological</span>
+    <span class="aside" data-copy="chronological">Reverse chronological</span>
   </div>
 
-  <div class="sub-block reveal">
+  <div class="sub-block reveal" id="conferences">
     <div class="sub-title">
-      <h3>Activities</h3>
-      <span class="count">Conferences · Events · Research · News</span>
+      <h3 data-copy="conferences">Conference Contributions</h3>
+      <span class="count" data-copy="researchPresentations">Research presentations</span>
+    </div>
+    <div class="reference-controls">
+      <div class="more-row" hidden>
+        <button class="more-btn" id="act-toggle" type="button"
+                aria-expanded="false" aria-controls="activities-list">View all conference presentations</button>
+      </div>
     </div>
     <div class="tl" id="activities-list"></div>
-
-    <div class="more-row" id="act-more">
-      <button class="more-btn" id="act-toggle" type="button"
-              aria-expanded="false" aria-controls="activities-list">View all activities</button>
-    </div>
   </div>
 
-  <div class="sub-block reveal">
+  <div class="sub-block reveal" id="awards">
     <div class="sub-title">
-      <h3>Awards &amp; Scholarships</h3>
-      <span class="count">Honours</span>
+      <h3 data-copy="awards">Awards &amp; Scholarships</h3>
+      <span class="count" data-copy="honours">Honours</span>
     </div>
     <ul class="awards" id="awards-list"></ul>
   </div>
@@ -165,18 +184,19 @@
 <section class="section wrap" id="contact">
   <div class="sec-head reveal">
     <span class="num">§ 05</span>
-    <h2>Contact</h2>
+    <h2 data-copy="contact">Contact</h2>
     <span class="rule"></span>
-    <span class="aside">Direct contact to be added</span>
+    <span class="aside" data-copy="inquiries">Professional inquiries</span>
   </div>
 
   <div class="contact reveal">
     <div>
-      <h3>Get in touch</h3>
-      <p>For research collaboration, device prototyping, or questions about the work shown here.</p>
-      <div id="contact-email"><a class="mailto">Loading…</a></div>    </div>
+      <h3 data-copy="getInTouch">Get in touch</h3>
+      <p data-copy="contactIntro">For industry R&amp;D opportunities, research collaboration, or questions about the work shown here.</p>
+      <div class="contact-methods" id="contact-methods"></div>
+    </div>
     <div>
-      <p class="side-title">Elsewhere</p>
+      <p class="side-title" data-copy="elsewhere">Elsewhere</p>
       <ul class="links" id="contact-links"></ul>
     </div>
   </div>
@@ -191,7 +211,6 @@
     </p>
     <div class="r">
       <b id="foot-copy">© 2026 Te Xiao</b>
-      <span id="foot-built">Plain HTML / CSS / JavaScript · hosted on GitHub Pages</span>
     </div>
   </div>
 </footer>

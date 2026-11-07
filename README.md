@@ -23,16 +23,16 @@ repository.
 │   └── js/site.js        reads content/*.json and renders the page
 └── content/
     ├── site.json         banner, portrait, footer, page title
-    ├── profile.json      intro, about, education, interests, contact
-    ├── projects.json     three project cards + the thread linking them
-    ├── publications.json peer-reviewed papers
-    ├── activities.json   conferences, talks, news
+    ├── profile.json      intro, about, education, skills, contact
+    ├── projects.json     three numbered research entries
+    ├── publications.json published and accepted journal papers
+    ├── activities.json   conference presentations
     └── awards.json       awards and scholarships
 ```
 
-`index.html` contains no content of its own beyond section headings and empty
-containers. Every piece of text a visitor reads is injected from `content/*.json`
-at load time, so content can be updated without touching HTML or CSS.
+The HTML sets the layout, headings, and navigation. The renderer loads the
+portfolio entries from `content/*.json`, so most content changes only require
+editing the relevant JSON file.
 
 ## Updating content
 
@@ -41,7 +41,8 @@ at load time, so content can be updated without touching HTML or CSS.
    anything missing.
 3. `activities` are sorted by `date` (descending) automatically; `date` accepts
    `YYYY`, `YYYY-MM` or `YYYY-MM-DD`.
-4. Commit and push to `main`. GitHub Pages redeploys in about a minute.
+4. Review the local preview. Publish to `main` only after the site owner approves
+   the content.
 
 ### Section status
 
@@ -54,11 +55,19 @@ without removing the section from the navigation:
 
 Remove `status` (or set it to anything else) once real entries are added.
 
+### Publication and contact details
+
+Use the published DOI URL for `publications[].link`. For an accepted paper,
+set `status` to `Accepted` and leave the link unset until publication is
+verified. List email addresses in `profile.contact.emails` after the site owner approves them for public use.
+
 ### Images
 
-Image fields are optional and empty by default. When a path is supplied the
-page loads it; when it is empty or fails to load, the labelled placeholder
-stays in place, so a missing file never breaks the layout.
+Use optimized local files under `assets/images/`. Set the relative paths
+in `site.json` for the banner or portrait. For a publication thumbnail, set
+the article’s `image` and `imageAlt` fields in `content/publications.json`.
+The thumbnail appears only when the image loads. The banner falls back to its navy background, and the portrait keeps its
+placeholder when an image is unavailable.
 
 ## Local preview
 
@@ -66,10 +75,10 @@ stays in place, so a missing file never breaks the layout.
 Serve the folder over HTTP instead, e.g.:
 
 ```sh
-python3 -m http.server 8765
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-then open <http://localhost:8765/>.
+Open the local server in your browser on port 8765.
 
 ## Publishing rules
 

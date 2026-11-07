@@ -1,59 +1,92 @@
 {
   "profile": {
     "name": "Te Xiao",
-    "nameLocal": "肖 特",
-    "role": "Doctoral Researcher · Biomedical Sensors",
+    "nameLocal": "肖特",
+    "role": "Research Assistant · Biomedical Device R&D",
     "affiliation": "Waseda University",
     "headline": "From Flexible Sensors to Wireless Biomedical Systems.",
     "intro": [
-      "I am a doctoral researcher at the Graduate School of Information, Production and Systems, Waseda University, working on smart contact lens systems for intraocular pressure monitoring.",
-      "My work covers the chain from device to data: fabricating resistive and capacitive sensing films, building ultrathin gold antennas, characterising them with VNA and LCR meters, and validating the assembled lens on porcine and rabbit eyes."
+      "I’m Te Xiao (肖特), a researcher at Waseda University working on flexible biosensors and wireless sensing systems, with a particular focus on smart contact lenses for biomedical applications."
     ],
     "facts": [
-      { "label": "Research focus", "value": "Smart contact lenses", "sub": "IOP monitoring" },
-      { "label": "Methods", "value": "Flexible electronics", "sub": "Resistive / capacitive" },
-      { "label": "Readout", "value": "Wireless sensing", "sub": "PT symmetric telemetry" },
-      { "label": "Funding", "value": "AMED-supported", "sub": "project participant" }
+      {
+        "label": "Application",
+        "value": "Biomedical devices",
+        "sub": "Smart contact lenses"
+      },
+      {
+        "label": "Fabrication",
+        "value": "Flexible sensors",
+        "sub": "PEDOT & wrinkled gold"
+      },
+      {
+        "label": "Wireless",
+        "value": "RF sensing",
+        "sub": "PT-symmetric readout"
+      },
+      {
+        "label": "Validation",
+        "value": "Integrated prototypes",
+        "sub": "Bench & animal-model testing"
+      }
     ],
     "about": {
       "paragraphs": [
-        "I work on biomedical sensing devices at Waseda University. The research integrates a flexible sensing film into a soft contact lens and reads it out wirelessly, so that intraocular pressure can be tracked over time rather than captured once in a clinic.",
-        "The readout is where the difficulty sits. A passive resonator sitting on a wet, curved, constantly moving surface is easily detuned, and the signal it returns is small. My work uses parity-time symmetry to sharpen that resonance, which is what makes a usable resolution possible without putting a battery on the lens.",
-        "I work across the full chain — sensor fabrication, antenna and resonator design in HFSS, bench characterisation with VNA and LCR meters, data analysis in MATLAB, and experimental validation including animal experiments. The aim is to keep the gap small between what a paper claims and what a prototype can actually demonstrate."
+        "My research at Waseda began with wireless power transfer to soft contact lenses during my master’s studies. In my doctoral research, I turned to flexible biosensors and wireless readout for measuring signals from the eye.",
+        "My research interests include flexible sensor fabrication, wireless sensing, and the integration of electronic devices into soft biomedical systems."
       ],
       "education": [
         {
-          "period": "2020.04–",
-          "degree": "Doctoral Program, Information, Production and Systems Engineering",
-          "org": "Waseda University · Graduate School of Information, Production and Systems",
-          "note": "Present · Doctor of Engineering expected March 2027"
+          "period": "Apr 2020 – Apr 2026",
+          "degree": "Doctoral research",
+          "org": "Waseda University, Graduate School of Information, Production and Systems",
+          "note": "Ph.D. degree expected: March 2027"
         },
         {
-          "period": "2018.04–2020.03",
-          "degree": "Master's degree",
-          "org": "Waseda University · Graduate School of Information, Production and Systems",
-          "note": "Degree awarded March 2020"
+          "period": "Apr 2018 – Apr 2020",
+          "degree": "Master’s studies",
+          "org": "Waseda University, Graduate School of Information, Production and Systems",
+          "note": "Flexible antennas and wireless power transfer"
         },
         {
-          "period": "2011.09–2015.06",
-          "degree": "B.Sc. Mathematics and Applied Mathematics",
-          "org": "China University of Mining and Technology, Beijing",
-          "note": ""
+          "period": "Sep 2011 – Jun 2015",
+          "degree": "Undergraduate studies in Mathematics and Applied Mathematics",
+          "org": "China University of Mining and Technology, Beijing"
         }
       ],
-      "interests": [
-        "Smart Contact Lenses",
-        "Biomedical Sensors",
-        "Flexible Electronics",
-        "Wireless Sensing",
-        "Device Fabrication",
-        "Engineering R&D"
+      "skills": [
+        {
+          "label": "Flexible Sensors & Materials",
+          "detail": "Resistive and capacitive sensors, PEDOT and PEDOT:PSS, wrinkled gold, hydrogels, PVA, PDMS, and Ecoflex."
+        },
+        {
+          "label": "Microfabrication",
+          "detail": "Photolithography, gold evaporation, electroplating, lift-off, EDOT polymerization, and ultrathin antenna fabrication."
+        },
+        {
+          "label": "RF & Wireless Sensing",
+          "detail": "PT-symmetric wireless sensing, RF resonators, antenna design, impedance matching, and S-parameter analysis."
+        },
+        {
+          "label": "Measurement & Validation",
+          "detail": "VNA and LCR measurements, circuit assembly, RF troubleshooting, device characterization, and animal-model validation."
+        },
+        {
+          "label": "Engineering Software",
+          "detail": "HFSS for electromagnetic simulation, Shapr3D for 3D modeling, MATLAB and DataGraph for analysis and visualization, and familiarity with Blender."
+        }
       ]
     },
     "contact": {
-      "status": "coming_soon",
-      "email": "",
-      "emailNote": "Direct contact details are being finalised and will be published here."
+      "emails": ["xiaote@toki.waseda.jp", "xt852387090@gmail.com"],
+      "emailNote": "A direct email address will be listed here when available.",
+      "links": [
+        {
+          "href": "https://github.com/xt-waseda",
+          "label": "GitHub",
+          "tag": "Profile"
+        }
+      ]
     }
   }
 }

@@ -10,15 +10,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  var TYPE_LABEL = {
-    conference: "Conference",
-    event: "Event",
-    research: "Research activity",
-    news: "News",
-    achievement: "Achievement"
-  };
   var KIND_LABEL = { award: "Award", scholarship: "Scholarship", honor: "Honor", fellowship: "Fellowship" };
-  var PUB_LABEL = { journal: "Journal", conference: "Conference", proceedings: "Proceedings", preprint: "Preprint" };
 
   /* ---------- helpers ---------- */
   function esc(v) {
@@ -52,10 +44,10 @@
     if (!box || !src) return;
     var img = new Image();
     img.alt = alt || "";
-    img.loading = "lazy";
     img.decoding = "async";
     img.onload = function () { box.appendChild(img); box.classList.add("has-image"); };
     img.src = src;
+    return img;
   }
 
   function emptyBox(lines) {
@@ -82,8 +74,11 @@
 
   /* ---------- site chrome ---------- */
   function applySite(site) {
-    var credit = $("#banner-credit");
     var banner = $(".banner");
+    if (banner && site.banner) {
+      if (site.banner.headline) $("h1", banner).textContent = site.banner.headline;
+      if (site.banner.subline) $(".sub", banner).textContent = site.banner.subline;
+    }
     if (banner && site.banner && site.banner.image) {
       /* the var is consumed inside site.css, so a relative path would be resolved
          against assets/css/ — hand the browser an absolute URL instead */
@@ -94,19 +89,14 @@
         banner.style.setProperty("--banner-img", 'url("' + abs + '")');
         if (site.banner.position) banner.style.backgroundPosition = site.banner.position;
         banner.classList.add("has-image");
-        if (credit && site.banner.credit) credit.textContent = site.banner.credit;
       };
       probe.src = abs;
     }
 
-    var portrait = $(".portrait");
-    if (portrait && site.portrait) mountImage(portrait, site.portrait.image, site.portrait.alt);
-
     if (site.footer) {
-      var note = $("#foot-note"), copy = $("#foot-copy"), bw = $("#foot-built");
+      var note = $("#foot-note"), copy = $("#foot-copy");
       if (note && site.footer.note) note.textContent = site.footer.note;
       if (copy && site.footer.copyright) copy.textContent = site.footer.copyright;
-      if (bw && site.footer.builtwith) bw.textContent = site.footer.builtwith;
     }
   }
 
@@ -151,176 +141,219 @@
         ]));
       } else {
         edu.innerHTML = a.education.map(function (e) {
-          return '<li><span class="y">' + esc(e.period || "") + "</span>" +
-            '<span class="t">' + esc(e.degree) +
-            (e.org ? "<small>" + esc(e.org) + (e.note ? " · " + esc(e.note) : "") + "</small>" : "") +
-            "</span></li>";
+          return '<li><div class="edu-head"><span class="t">' + esc(e.degree) + "</span>" +
+            (e.period ? '<span class="y">' + esc(e.period) + "</span>" : "") + "</div>" +
+            (e.org ? '<p class="edu-org">' + esc(e.org) + "</p>" : "") +
+            (e.note ? '<p class="edu-note">' + esc(e.note) + "</p>" : "") + "</li>";
         }).join("");
       }
     }
 
-    var inter = $("#about-interests");
-    if (inter && a.interests) {
-      inter.innerHTML = a.interests.map(function (t) {
-        return "<span>" + esc(t) + "</span>";
+    var skills = $("#about-skills");
+    if (skills) {
+      skills.innerHTML = (a.skills || []).map(function (s) {
+        return "<div><dt>" + esc(s.label) + "</dt><dd>" + esc(s.detail) + "</dd></div>";
       }).join("");
     }
   }
 
-  /* ---------- projects ---------- */
-  function renderProjects(items) {
-    var grid = $("#projects-grid");
-    if (!grid) return;
-    if (!items || !items.length) {
-      grid.innerHTML = "";
-      grid.appendChild(soonBox("Coming soon", "Project descriptions will be published here."));
-      return;
-    }
-    grid.innerHTML = items.map(function (p, i) {
-      return '<article class="card">' +
-        '<div class="thumb" data-src="' + esc(p.image || "") + '" data-alt="' + esc(p.title) + '">' +
-          '<div class="ph"><b>Figure ' + String(i + 1).padStart(2, "0") + "</b></div>" +
-        "</div>" +
-        '<div class="card-body">' +
-          (p.kicker ? '<div class="k">' + esc(p.kicker) + "</div>" : "") +
-          "<h3>" + esc(p.title) + "</h3>" +
-          "<p>" + esc(p.summary) + "</p>" +
-          (p.tags && p.tags.length
-            ? '<div class="tags">' + p.tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>"
-            : "") +
-        "</div></article>";
-    }).join("");
-    $$(".card .thumb", grid).forEach(function (t) {
-      mountImage(t, t.getAttribute("data-src"), t.getAttribute("data-alt"));
-    });
-  }
-
-  /* ---------- project thread ---------- */
-  /* Spells out how the cards depend on each other, so the three figures read as
-     one program rather than three unrelated projects. */
-  function renderThread(t) {
-    var box = $("#projects-thread");
-    if (!box) return;
-    if (!t || !t.chain || !t.chain.length) { box.style.display = "none"; return; }
-    var steps = t.chain.map(function (c) {
-      var name = typeof c === "string" ? c : c.name;
-      var fig = typeof c === "string" ? "" : c.fig;
-      return '<span class="step">' + esc(name) + (fig ? " <b>FIG " + esc(fig) + "</b>" : "") + "</span>";
-    }).join('<span class="ar">→</span>');
-    box.innerHTML =
-      '<span class="thread-label">' + esc(t.label || "Program thread") + "</span>" +
-      '<div class="thread-chain">' + steps + "</div>" +
-      (t.note ? '<p class="thread-note">' + esc(t.note) + "</p>" : "");
-  }
-
-  /* ---------- publications ---------- */
-  function renderPublications(items) {
-    var list = $("#pubs-list");
-    if (!list) return;
-    if (!items || !items.length) {
-      list.innerHTML = "";
-      var li = document.createElement("li");
-      li.className = "soon-li";
-      li.appendChild(soonBox("Coming soon", "Peer-reviewed publications will be listed here."));
-      list.appendChild(li);
-      return;
-    }
-    list.innerHTML = items.slice().sort(byDateDesc).map(function (p) {
-      var venue = [PUB_LABEL[p.type] || p.type || "", p.venue || ""].filter(Boolean).join(" · ");
-      var titleHtml = p.link
-        ? '<a class="pub-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
-        : esc(p.title);
-      return "<li>" +
-        '<span class="pub-t">' + titleHtml +
-          (p.authors ? '<span class="pub-a">' + esc(p.authors) + "</span>" : "") +
-        "</span>" +
-        '<span class="pub-v">' + esc(venue) + "<br>" + esc(fmtDate(p.date)) +
-          (p.link ? '<br><a class="pub-doi" href="' + esc(p.link) + '" target="_blank" rel="noopener">DOI ↗</a>' : "") +
-        "</span>" +
-        "</li>";
-    }).join("");
-  }
-
-  /* ---------- activities ---------- */
-  function renderActivities(data) {
-    var tl = $("#activities-list");
-    var row = $("#act-more");
-    if (!tl) return;
-    var items = (data && data.activities) || [];
+  /* ---------- research ---------- */
+  function renderResearch(items, copy) {
+    var list = $("#research-list");
     if (!items.length) {
-      tl.innerHTML = "";
-      tl.appendChild(soonBox("Coming soon", isSoon(data) ? data.note
-        : "Conference presentations and other activities will be listed here."));
-      if (row) row.style.display = "none";
+      var item = document.createElement("li");
+      item.appendChild(soonBox(copy.soon, copy.noResearch));
+      list.replaceChildren(item);
       return;
     }
-    if (row) row.style.display = "";
-    tl.innerHTML = items.slice().sort(byDateDesc).map(function (a) {
-      var type = TYPE_LABEL[a.type] || a.type || "";
-      return '<article class="tl-item">' +
-        '<div class="tl-date">' + esc(fmtDate(a.date)) + "</div>" +
-        '<div class="tl-body">' +
-          '<div class="tl-meta">' +
-            (type ? '<span class="type">' + esc(type) + "</span>" : "") +
-            (a.place ? '<span class="place">' + esc(a.place) + "</span>" : "") +
-          "</div>" +
-          "<h3>" + esc(a.title) + "</h3>" +
-          (a.summary ? "<p>" + esc(a.summary) + "</p>" : "") +
-          (a.image ? '<div class="tl-media" data-src="' + esc(a.image) + '" data-alt="' + esc(a.title) + '"></div>' : "") +
-          (a.link
-            ? '<a class="tl-link" href="' + esc(a.link) + '" target="_blank" rel="noopener">' +
-              esc(a.linkLabel || "Open link") + " ↗</a>"
-            : "") +
-        "</div></article>";
+    list.innerHTML = items.map(function (p) {
+      var links = (p.links || []).map(function (link) {
+        var external = !link.href.startsWith("#");
+        return '<li><a class="pub-doi" href="' + esc(link.href) + '"' +
+          (external ? ' target="_blank" rel="noopener"' : "") + '>' + esc(link.label) +
+          (external ? ' <span aria-hidden="true">↗</span>' : "") + "</a></li>";
+      }).join("");
+      return '<li class="research-item"><article>' +
+        "<h3>" + esc(p.title) + "</h3>" +
+        p.paragraphs.map(function (paragraph) { return "<p>" + esc(paragraph) + "</p>"; }).join("") +
+        '<ul class="research-tags">' + p.tags.map(function (tag) { return "<li>" + esc(tag) + "</li>"; }).join("") + "</ul>" +
+        (links ? '<ul class="research-links">' + links + "</ul>" : "") +
+        "</article></li>";
     }).join("");
-    $$(".tl-media", tl).forEach(function (m) {
-      mountImage(m, m.getAttribute("data-src"), m.getAttribute("data-alt"));
-    });
-    initActivityToggle();
   }
 
-  /* Shows the newest few activities first; the rest stay in the DOM (and in
-     content/activities.json) and are revealed by the button. */
-  var ACTIVITY_PREVIEW = 5;
-
-  function initActivityToggle() {
-    var list = $("#activities-list");
-    var btn = $("#act-toggle");
-    var row = $("#act-more");
-    if (!list || !btn || !row) return;
-
-    var rows = $$(".tl-item", list);
-    if (rows.length <= ACTIVITY_PREVIEW) { row.style.display = "none"; return; }
-
-    var open = false;
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    function paint() {
-      rows.forEach(function (r, i) {
-        if (i >= ACTIVITY_PREVIEW) r.classList.toggle("is-hidden", !open);
-      });
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.innerHTML = open
-        ? 'Show fewer<span class="car">⌄</span>'
-        : 'View all activities<span class="cnt">+' + (rows.length - ACTIVITY_PREVIEW) + '</span><span class="car">⌄</span>';
+  /* ---------- publications and conferences ---------- */
+  var REFERENCE_COPY = {
+    en: {
+      noResearch: "Research descriptions will be listed here.",
+      email: "Email", conferenceLink: "Open official conference information",
+      allPublications: "View all publications", fewerPublications: "Show fewer publications",
+      allConferences: "View all conference presentations", fewerConferences: "Show fewer conference presentations",
+      publisher: "Publisher link", accepted: "Accepted", datePending: "Publication date unverified",
+      equalNote: "† Te Xiao and Hanzhe Zhang contributed equally as co-first authors.",
+      soon: "Coming soon", noPublications: "Publications will be listed here.",
+      noConferences: "Conference presentations will be listed here."
+    },
+    "zh-Hans": {
+      noResearch: "研究介绍将在此列出。",
+      allPublications: "查看全部论文", fewerPublications: "收起论文",
+      allConferences: "查看全部会议报告", fewerConferences: "收起会议报告",
+      publisher: "出版社链接", accepted: "已接收", datePending: "出版日期待核实",
+      equalNote: "† Te Xiao 与 Hanzhe Zhang 为共同第一作者，对论文贡献相同。",
+      soon: "即将更新", noPublications: "论文将在此列出。", noConferences: "会议报告将在此列出。"
+    },
+    ja: {
+      noResearch: "研究内容をこちらに掲載します。",
+      allPublications: "すべての論文を表示", fewerPublications: "論文を折りたたむ",
+      allConferences: "すべての学会発表を表示", fewerConferences: "学会発表を折りたたむ",
+      publisher: "出版社のページ", accepted: "掲載受理", datePending: "出版日未確認",
+      equalNote: "† Te Xiao と Hanzhe Zhang は共同筆頭著者であり、本論文に同等に貢献しました。",
+      soon: "準備中", noPublications: "論文をこちらに掲載します。", noConferences: "学会発表をこちらに掲載します。"
     }
+  };
 
-    btn.addEventListener("click", function () {
-      open = !open;
-      paint();
-      if (!open) {
-        /* four rows just collapsed above the button — bring the section back
-           into view instead of leaving the reader in the footer */
-        var sec = $("#activities");
-        if (sec) sec.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
-      }
-    });
-
+  function bindDisclosure(id, rows, extra, more, less) {
+    var button = $(id);
+    var expanded = button.getAttribute("aria-expanded") === "true" && extra.length > 0;
+    button.parentNode.hidden = !extra.length;
+    function paint() {
+      rows.forEach(function (row, i) { row.hidden = !expanded && extra.includes(i); });
+      button.setAttribute("aria-expanded", String(expanded));
+      button.innerHTML = esc(expanded ? less : more) + '<span class="car" aria-hidden="true">⌄</span>';
+    }
+    button.onclick = function () { expanded = !expanded; paint(); };
     paint();
   }
 
+  function renderPublications(items, copy, locale) {
+    var list = $("#pubs-list");
+    var note = $("#pub-equal-note");
+    if (!items.length) {
+      var li = document.createElement("li");
+      li.className = "soon-li";
+      li.appendChild(soonBox(copy.soon, copy.noPublications));
+      list.replaceChildren(li);
+    } else {
+      list.innerHTML = items.map(function (p) {
+        var contributors = p.equalContributors || [];
+        var authors = p.authors.map(function (name) {
+          var label = name === "Te Xiao" ? "<strong>Te Xiao</strong>" : esc(name);
+          return label + (contributors.includes(name) ? '<sup aria-describedby="pub-equal-note">†</sup>' : "");
+        }).join(", ");
+        var title = p.link
+          ? '<a class="pub-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
+          : esc(p.title);
+        var month = p.referenceMonth || (p.date.length === 7 ? p.date : "");
+        var date = month
+          ? new Intl.DateTimeFormat(locale, { year: "numeric", month: "long", timeZone: "UTC" })
+            .format(new Date(month + "-01T00:00:00Z"))
+          : p.date.slice(0, 4);
+        var citation = p.citation ? ", " + esc(p.citation) : "";
+        var linkLabel = p.link && p.link.startsWith("https://doi.org/") ? "DOI" : copy.publisher;
+        return '<li class="pub-entry"' + (p.anchor ? ' id="' + esc(p.anchor) + '"' : "") + '>' +
+          '<span class="pub-main">' +
+          (p.image ? '<span class="pub-thumb" data-src="' + esc(p.image) + '" data-alt="' + esc(p.imageAlt) + '"></span>' : "") +
+          '<span class="pub-t" lang="en">' + title + '<span class="pub-a">' + authors + "</span></span></span>" +
+          '<span class="pub-v"><span lang="en">' + esc(p.venue) + citation + "</span><br>" + esc(date) +
+          (p.status === "Accepted" ? '<br><strong class="pub-status">' + esc(copy.accepted) + "</strong>" : "") +
+          (p.referenceMonth ? '<br><span class="pub-status">' + esc(copy.datePending) + "</span>" : "") +
+          (p.link ? '<br><a class="pub-doi" href="' + esc(p.link) + '" target="_blank" rel="noopener">' +
+            esc(linkLabel) + " ↗</a>" : "") +
+          (p.pdf ? '<br><a class="pub-doi" href="' + esc(p.pdf) + '" target="_blank" rel="noopener">PDF ↗</a>' : "") +
+          (p.pdfLicense ? ' · <a class="pub-doi" href="' + esc(p.pdfLicense) +
+            '" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>' : "") + "</span></li>";
+      }).join("");
+    }
+    $$(".pub-thumb", list).forEach(function (box) {
+      mountImage(box, box.dataset.src, box.dataset.alt);
+    });
+    note.hidden = !items.some(function (p) { return p.equalContributors && p.equalContributors.length; });
+    note.textContent = note.hidden ? "" : copy.equalNote;
+    bindDisclosure("#pub-toggle", $$(".pub-entry", list), items.slice(3).map(function (_, i) { return i + 3; }),
+      copy.allPublications + " (" + items.length + ")", copy.fewerPublications);
+  }
+
+  function renderActivities(data, copy, locale) {
+    var list = $("#activities-list");
+    var items = ((data && data.activities) || []).slice().sort(byDateDesc);
+    if (!items.length) {
+      list.replaceChildren(soonBox(copy.soon, copy.noConferences));
+    } else {
+      list.innerHTML = items.map(function (a) {
+        var place = (a.placeTranslations && a.placeTranslations[locale]) || a.place;
+        var link = a.link ? '<a class="conference-link" href="' + esc(a.link) +
+          '" target="_blank" rel="noopener" aria-label="' + esc(copy.conferenceLink + " · " + a.event) +
+          '"><span aria-hidden="true">↗</span></a>' : "";
+        return '<article class="tl-item">' +
+          '<div class="tl-date">' + esc(a.date.slice(0, 4)) + "</div>" +
+          '<div class="tl-body"><p class="tl-event"><span lang="en">' + esc(a.event) + "</span>" + link + "</p>" +
+          '<h3 lang="' + esc(a.titleLang || "en") + '">' + esc(a.title) + "</h3>" +
+          (place ? '<p class="tl-place">' + esc(place) + "</p>" : "") +
+          "</div></article>";
+      }).join("");
+    }
+    var extra = items.reduce(function (indices, a, i) {
+      if (!a.featured) indices.push(i);
+      return indices;
+    }, []);
+    bindDisclosure("#act-toggle", $$(".tl-item", list), extra, copy.allConferences, copy.fewerConferences);
+  }
+
+  function initLanguage(site, profile, projects, pubs, activities, awards, translations) {
+    var portrait = site.portrait && mountImage($(".portrait"), site.portrait.image, site.portrait.alt);
+    var buttons = $$("[data-locale]");
+    var labels = $$("[data-copy]").map(function (el) { return [el, el.textContent]; });
+    var aria = $$("[data-label]").map(function (el) { return [el, el.getAttribute("aria-label")]; });
+    var locale = "en";
+    try { locale = localStorage.getItem("portfolio-language") || locale; } catch (e) {}
+
+    function paint(lang) {
+      var translated = translations[lang] || {};
+      var siteCopy = translated.site || {};
+      var copy = Object.assign({}, REFERENCE_COPY[lang], translated.copy);
+      var localizedProfile = Object.assign({}, profile, translated.profile);
+      var localizedProjects = (projects.projects || []).map(function (project, i) {
+        var result = Object.assign({}, project, (translated.projects || [])[i]);
+        if (result.links && translated.featureLink) {
+          result.links = result.links.map(function (link) {
+            return link.label === "Waseda University research feature"
+              ? Object.assign({}, link, { label: translated.featureLink }) : link;
+          });
+        }
+        return result;
+      });
+
+      document.documentElement.lang = lang;
+      document.title = siteCopy.title || site.title;
+      labels.forEach(function (entry) { entry[0].textContent = copy[entry[0].dataset.copy] || entry[1]; });
+      aria.forEach(function (entry) { entry[0].setAttribute("aria-label", copy[entry[0].dataset.label] || entry[1]); });
+      buttons.forEach(function (button) { button.setAttribute("aria-pressed", String(button.dataset.locale === lang)); });
+      $(".banner .sub").textContent = siteCopy.subline || site.banner.subline;
+      $("#foot-note").textContent = siteCopy.footer || site.footer.note;
+      if (portrait) portrait.alt = siteCopy.portraitAlt || site.portrait.alt;
+
+      renderProfile(localizedProfile);
+      renderAbout(localizedProfile);
+      renderResearch(localizedProjects, copy);
+      renderPublications(pubs || [], copy, lang);
+      renderActivities(activities, copy, lang);
+      renderAwards(awards, copy, translated.awardPeriods);
+      renderContact(profile.contact, copy, translated.profile && translated.profile.emailNote);
+    }
+
+    buttons.forEach(function (button) {
+      var lang = button.dataset.locale;
+      button.disabled = lang !== "en" && !translations[lang];
+      button.addEventListener("click", function () {
+        paint(lang);
+        try { localStorage.setItem("portfolio-language", lang); } catch (e) {}
+      });
+    });
+    paint(translations[locale] ? locale : "en");
+  }
+
   /* ---------- awards ---------- */
-  function renderAwards(data) {
+  function renderAwards(data, copy, periods) {
     var list = $("#awards-list");
     if (!list) return;
     var items = (data && data.awards) || [];
@@ -333,12 +366,12 @@
       list.appendChild(li);
       return;
     }
-    list.innerHTML = items.slice().sort(byDateDesc).map(function (a) {
+    list.innerHTML = items.slice().sort(byDateDesc).map(function (a, i) {
       return "<li>" +
-        '<span class="y">' + esc(fmtDate(a.date)) + "</span>" +
+        '<span class="y">' + esc((periods && periods[i]) || a.period || fmtDate(a.date)) + "</span>" +
         '<span class="t">' + esc(a.title) +
-          '<span class="k">' + esc(KIND_LABEL[a.kind] || a.kind || "") + "</span>" +
-          (a.org ? "<small>" + esc(a.org) + "</small>" : "") +
+          '<span class="k">' + esc(copy[a.kind] || KIND_LABEL[a.kind] || a.kind || "") + "</span>" +
+          (a.org ? "<small>" + esc(a.org === "Waseda University" ? copy.waseda || a.org : a.org) + "</small>" : "") +
           (a.summary ? "<small>" + esc(a.summary) + "</small>" : "") +
         "</span>" +
         "</li>";
@@ -346,41 +379,43 @@
   }
 
   /* ---------- contact ---------- */
-  function renderContact(c) {
-    var mail = $("#contact-email");
+  function renderContact(c, copy, emailNote) {
+    var methods = $("#contact-methods");
     var links = $("#contact-links");
-    var soon = isSoon(c) || !c || !c.email;
+    c = c || {};
+    var emails = isSoon(c) ? [] : c.emails || (c.email ? [c.email] : []);
+    var items = c.links || [];
     var panel = $(".contact");
 
-    if (mail) {
-      if (soon) {
-        mail.innerHTML = "";
-        mail.appendChild(soonBox("Coming soon",
-          (c && c.emailNote) || "Contact details will be published here."));
-      } else {
-        mail.innerHTML = '<a class="mailto" href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a>";
-      }
+    if (methods) {
+      methods.innerHTML =
+        (emails.length ? '<div><span class="contact-label">' + esc(copy.email) + '</span><ul class="contact-emails">' +
+          emails.map(function (email) {
+            return '<li><a class="mailto" href="mailto:' + esc(email) + '">' + esc(email) + "</a></li>";
+          }).join("") + "</ul></div>" : "<p>" + esc(emailNote || c.emailNote) + "</p>");
     }
 
     if (links) {
       var col = links.parentNode;
-      if (soon) {
-        /* nothing to show in the right-hand column — let the notice take the row */
-        if (col) col.style.display = "none";
-        if (panel) panel.classList.add("is-single");
-      } else if (c.links && c.links.length) {
-        links.innerHTML = c.links.map(function (l) {
-          return '<li><a href="' + esc(l.href) + '" target="_blank" rel="noopener">' +
-            "<span>" + esc(l.label) + "</span><span>" + esc(l.tag || "Link") + " ↗</span></a></li>";
-        }).join("");
-      } else {
-        links.innerHTML = '<li><span class="note-line">Links to be added</span></li>';
-      }
+      if (col) col.hidden = !items.length;
+      if (panel) panel.classList.toggle("is-single", !items.length);
+      links.innerHTML = items.map(function (l) {
+        return '<li><a href="' + esc(l.href) + '" target="_blank" rel="noopener">' +
+          "<span>" + esc(l.label) + "</span><span>" +
+          esc((l.tag === "Profile" && copy.profileLink) || l.tag || "Link") + " ↗</span></a></li>";
+      }).join("");
     }
   }
 
   /* ---------- nav: scrollspy + mobile menu ---------- */
   function initNav() {
+    var nav = $(".nav-in");
+    if (nav && "ResizeObserver" in window) {
+      // Keep anchor headings clear when zoomed navigation wraps to multiple lines.
+      new ResizeObserver(function () {
+        document.documentElement.style.setProperty("--nav-offset", nav.offsetHeight + "px");
+      }).observe(nav);
+    }
     var links = $$(".navlinks a");
     var sections = links.map(function (a) { return $(a.getAttribute("href")); }).filter(Boolean);
     if (sections.length) {
@@ -435,7 +470,8 @@
       load("projects.json").then(function (d) { return d; }).catch(function () { return null; }),
       load("publications.json").then(function (d) { return d.publications || []; }).catch(function () { return null; }),
       load("activities.json").then(function (d) { return d; }).catch(function () { return null; }),
-      load("awards.json").then(function (d) { return d; }).catch(function () { return null; })
+      load("awards.json").then(function (d) { return d; }).catch(function () { return null; }),
+      load("locales.json").catch(function () { return {}; })
     ]).then(function (r) {
       var site = r[0], profile = r[1], proj = r[2] || {}, pubs = r[3], acts = r[4], awards = r[5];
 
@@ -443,20 +479,13 @@
         var n = document.createElement("div");
         n.className = "notice";
         n.innerHTML = "<b>Content not loaded.</b> Browsers block reading local JSON over file:// — " +
-          "open this page through <b>./serve.sh</b> or the preview panel.";
+          "open this page through the local preview server.";
         document.body.appendChild(n);
         return;
       }
 
       applySite(site);
-      renderProfile(profile);
-      renderAbout(profile);
-      renderProjects(proj.projects || []);
-      renderThread(proj.thread);
-      renderPublications(pubs);
-      renderActivities(acts);
-      renderAwards(awards);
-      renderContact(profile.contact);
+      initLanguage(site, profile, proj, pubs, acts, awards, r[6]);
     });
   }
 
