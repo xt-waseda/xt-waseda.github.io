@@ -1,6 +1,31 @@
 {
   "publications": [
     {
+      "date": "2026-11-13",
+      "title": "Stretchable Wrinkled-Gold Antenna for High-Sensitivity Intraocular Pressure Monitoring Smart Contact Lens",
+      "authors": [
+        "Te Xiao",
+        "Saman Azhari",
+        "Hanzhe Zhang",
+        "Yang Cui",
+        "Bingfu Liu",
+        "Taiki Takamatsu",
+        "Dingliang Xu",
+        "Atsushige Ashimori",
+        "Kazuhiro Kimura",
+        "Takeo Miyake"
+      ],
+      "venue": "Advanced Materials Technologies",
+      "anchor": "publication-wrinkled-gold-antenna",
+      "status": "Published",
+      "image": "",
+      "imageAlt": "",
+      "contribution": "first",
+      "earlyView": true,
+      "link": "https://doi.org/10.1002/admt.71460",
+      "citation": "e71460"
+    },
+    {
       "date": "2026-04-10",
       "title": "Enhanced Sensitivity of Real-Time Intraocular Pressure Monitoring by Integration of a Wrinkled Gold-Based Capacitive Sensor with Parity-Time Symmetry Wireless Technology",
       "authors": [
@@ -16,7 +41,9 @@
       "link": "https://doi.org/10.1021/acssensors.5c04736",
       "citation": "11(4), 3274–3286",
       "image": "",
-      "imageAlt": ""
+      "imageAlt": "",
+      "contribution": "first",
+      "status": "Published"
     },
     {
       "date": "2026-01-13",
@@ -40,28 +67,9 @@
       "pdf": "assets/papers/xiao-2026-npj-flexible-electronics.pdf",
       "pdfLicense": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "image": "",
-      "imageAlt": ""
-    },
-    {
-      "date": "2026",
-      "title": "Stretchable Wrinkled-Gold Antenna for High-Sensitivity Intraocular Pressure Monitoring Smart Contact Lens",
-      "authors": [
-        "Te Xiao",
-        "Saman Azhari",
-        "Hanzhe Zhang",
-        "Yang Cui",
-        "Bingfu Liu",
-        "Taiki Takamatsu",
-        "Dingliang Xu",
-        "Atsushige Ashimori",
-        "Kazuhiro Kimura",
-        "Takeo Miyake"
-      ],
-      "venue": "Advanced Materials Technologies",
-      "anchor": "publication-wrinkled-gold-antenna",
-      "status": "Accepted",
-      "image": "",
-      "imageAlt": ""
+      "imageAlt": "",
+      "contribution": "coFirst",
+      "status": "Published"
     },
     {
       "date": "2026",
@@ -75,12 +83,12 @@
       ],
       "venue": "npj Nanophotonics",
       "status": "Accepted",
-      "referenceMonth": "2026-10",
       "image": "",
-      "imageAlt": ""
+      "imageAlt": "",
+      "contribution": "third"
     },
     {
-      "date": "2022",
+      "date": "2022-09",
       "title": "Electrochromic soft contact lenses with built-in non-interfering, high-efficient dual-band wireless power transfer system",
       "authors": [
         "Lunjie Hu",
@@ -95,7 +103,9 @@
       "citation": "344, 113766",
       "pdf": "https://miyake.kinsta.cloud/wp-content/uploads/2023/09/file53-1.pdf",
       "image": "",
-      "imageAlt": ""
+      "imageAlt": "",
+      "contribution": "fifth",
+      "status": "Published"
     }
   ]
 }

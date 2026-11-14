@@ -2,9 +2,9 @@
   "activities": [
     {
       "type": "conference",
-      "date": "2026-05-30",
+      "date": "2026",
       "event": "68th Annual Meeting of the Japan Contact Lens Society (JCLS)",
-      "title": "Smart Contact Lens for Real-Time Monitoring of Intraocular Pressure by Parity-Time Symmetry Wireless Sensing System",
+      "title": "IOP Smart Lens with PT-Symmetric Systems",
       "place": "Tokyo, Japan",
       "placeTranslations": {
         "zh-Hans": "日本东京",
@@ -15,8 +15,8 @@
     },
     {
       "type": "conference",
-      "date": "2026-04-08",
-      "event": "Nature Conference on Flexible Electronics – Transforming Technology for Human Health",
+      "date": "2026",
+      "event": "Nature Conference on Flexible Electronics",
       "title": "Wrinkled Gold Capacitive Sensor for Real-Time Intraocular Pressure Monitoring with PT-Symmetric Wireless Sensing",
       "place": "Xi’an, China",
       "placeTranslations": {
@@ -28,9 +28,9 @@
     },
     {
       "type": "conference",
-      "date": "2025-05-20",
+      "date": "2025",
       "event": "35th Anniversary World Congress on Biosensors",
-      "title": "Real-Time Intraocular Pressure Monitoring using an integrated Wrinkled Gold-Based Capacitive Sensor with a Parity Time Symmetry Wireless Amplification System",
+      "title": "Real-Time Intraocular Pressure Monitoring using an Integrated Wrinkled Gold-Based Capacitive Sensor with a Parity Time Symmetry Wireless Amplification System",
       "place": "Lisbon, Portugal",
       "placeTranslations": {
         "zh-Hans": "葡萄牙里斯本",
@@ -41,7 +41,7 @@
     },
     {
       "type": "conference",
-      "date": "2023-11-27",
+      "date": "2023",
       "event": "MRS Fall Meeting & Exhibit",
       "title": "Wireless, Highly Sensitive Biosensors on Contact Lenses for Intraocular Pressure Monitoring",
       "place": "Boston, USA",
@@ -54,258 +54,17 @@
     },
     {
       "type": "conference",
-      "date": "2022-05-24",
+      "date": "2022",
       "event": "MRS Spring Meeting & Exhibit",
       "title": "Wireless, Highly Sensitive and Diagnostic Contact Lens Sensors",
-      "place": "Online",
+      "place": "Honolulu, USA (Online)",
       "hostCity": "Honolulu, USA",
       "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
+        "zh-Hans": "美国火奴鲁鲁（线上）",
+        "ja": "米国・ホノルル（オンライン）"
       },
       "featured": true,
       "link": "https://www.mrs.org/docs/default-source/meetings-events/spring-meetings/2022/program.pdf?sfvrsn=469d650e_6"
-    },
-    {
-      "type": "conference",
-      "date": "2025-11-12",
-      "event": "35th Annual Meeting of the Materials Research Society of Japan (MRS-J)",
-      "title": "Wearable, stretchable, wireless strain sensors for intraocular ocular pressure measurement",
-      "place": "Kitakyushu, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本北九州",
-        "ja": "日本・北九州"
-      },
-      "link": "https://www.mrs-j.org/meeting2025/jp/prg/programList.php?mode=1&sid=D-1&wday=12"
-    },
-    {
-      "type": "conference",
-      "date": "2025-05-20",
-      "event": "35th Anniversary World Congress on Biosensors",
-      "title": "Real-Time Eye Pressure Monitoring via Integration of Resistive Smart Contact Lens Sensor with Parity Time Symmetry Wireless System for Enhanced Sensitivity",
-      "place": "Lisbon, Portugal",
-      "placeTranslations": {
-        "zh-Hans": "葡萄牙里斯本",
-        "ja": "ポルトガル・リスボン"
-      },
-      "link": "https://www.elsevier.com/events/conferences/all/anniversary-world-congress-on-biosensors/previous-events-and-testimonials"
-    },
-    {
-      "type": "conference",
-      "date": "2024-05",
-      "event": "7th Event of the Young Researchers Society for Flexible and Stretchable Electronics",
-      "title": "Smart Contact Lenses with MXene Coating for Electromagnetic Interference Shielding",
-      "place": "Osaka, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本大阪",
-        "ja": "日本・大阪"
-      },
-      "link": "https://fsejp.weebly.com/7th-event-may-23_24-2024.html"
-    },
-    {
-      "type": "conference",
-      "date": "2023-03",
-      "event": "70th JSAP Spring Meeting",
-      "title": "Wearable and stretchable strain sensors for intraocular ocular pressure measurement",
-      "place": "Tokyo, Japan / Online",
-      "placeTranslations": {
-        "zh-Hans": "日本东京／线上",
-        "ja": "日本・東京／オンライン"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2023s/english/operationpolicy/"
-    },
-    {
-      "type": "conference",
-      "date": "2021-11-29",
-      "event": "9th International Symposium on Surface Science (ISSS-9)",
-      "title": "A wireless, stretchable sensor lens for intraocular pressure measuring",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://www.jvss.jp/isss9/isss9_FinalProgram.pdf"
-    },
-    {
-      "type": "conference",
-      "date": "2021-10",
-      "event": "34th International Microprocesses and Nanotechnology Conference (MNC 2021)",
-      "title": "Highly sensitive passive glucose sensor based on parity-time (PT) symmetric resonators",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://imnc.jp/2022/award/"
-    },
-    {
-      "type": "conference",
-      "date": "2021-10",
-      "event": "34th International Microprocesses and Nanotechnology Conference (MNC 2021)",
-      "title": "Wireless electrochromic soft contact lenses using PEDOT:PSS composite film with Non-interfering Dual-band WPT system",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://imnc.jp/2022/event/"
-    },
-    {
-      "type": "conference",
-      "date": "2021-09-12",
-      "event": "82nd JSAP Autumn Meeting",
-      "title": "Wireless, electrochromic soft contact lenses using PEDOT:PSS composite film",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://www.jstage.jst.go.jp/article/jsapmeeting/2021.2/0/2021.2_2436/_pdf"
-    },
-    {
-      "type": "conference",
-      "date": "2021-09-12",
-      "event": "82nd JSAP Autumn Meeting",
-      "title": "Wireless, stretchable contact lens sensors for intraocular pressure monitoring",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2021a/english/program/"
-    },
-    {
-      "type": "conference",
-      "date": "2021-09-10",
-      "event": "82nd JSAP Autumn Meeting",
-      "title": "PT 対称性共振結合回路を用いた超高感度な生体モニタリングシステムの開発",
-      "titleLang": "ja",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2021a/english/program/"
-    },
-    {
-      "type": "conference",
-      "date": "2021-06",
-      "event": "2nd Event of the Young Researchers Society for Flexible and Stretchable Electronics",
-      "title": "Parity-Time symmetrically resonant coupling system for wearable biosensors",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://fsejp.weebly.com/uploads/1/3/3/5/133572570/fse%E8%8B%A5%E6%89%8B_2ndevent_program_public.pdf"
-    },
-    {
-      "type": "conference",
-      "date": "2021-03",
-      "event": "68th JSAP Spring Meeting",
-      "title": "Wireless, stretchable contact lens sensors for intraocular pressure monitoring",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2021s/english/operationpolicy/"
-    },
-    {
-      "type": "conference",
-      "date": "2020-09",
-      "event": "81st JSAP Autumn Meeting",
-      "title": "コンタクトレンズに搭載可能な無線給電型空気亜鉛電源の開発",
-      "titleLang": "ja",
-      "place": "Online",
-      "placeTranslations": {
-        "zh-Hans": "线上",
-        "ja": "オンライン"
-      },
-      "link": "https://www.jstage.jst.go.jp/article/jsapmeeting/2020.2/0/2020.2_1695/_pdf"
-    },
-    {
-      "type": "conference",
-      "date": "2019-12",
-      "event": "MRS Fall Meeting & Exhibit",
-      "title": "A Wireless-Powered, Biosensing Soft Contact Lens",
-      "place": "Boston, USA",
-      "placeTranslations": {
-        "zh-Hans": "美国波士顿",
-        "ja": "米国・ボストン"
-      }
-    },
-    {
-      "type": "conference",
-      "date": "2019-11",
-      "event": "4th International Symposium on Biomedical Engineering (ISBE2019)",
-      "title": "Wireless, wearable power source printed on moist, soft contact lenses",
-      "place": "Hamamatsu, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本滨松",
-        "ja": "日本・浜松"
-      },
-      "link": "https://www.rie.shizuoka.ac.jp/~conference/isbe2019/"
-    },
-    {
-      "type": "conference",
-      "date": "2019-09",
-      "event": "80th JSAP Autumn Meeting",
-      "title": "A wireless-powered biobooster on soft contact lens",
-      "place": "Sapporo, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本札幌",
-        "ja": "日本・札幌"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/"
-    },
-    {
-      "type": "conference",
-      "date": "2019-09",
-      "event": "80th JSAP Autumn Meeting",
-      "title": "Transparent, micropatterned Au mesh coil for wireless power transfer between eyeglass/contact lens",
-      "place": "Sapporo, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本札幌",
-        "ja": "日本・札幌"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/"
-    },
-    {
-      "type": "conference",
-      "date": "2019-09",
-      "event": "80th JSAP Autumn Meeting",
-      "title": "A stretchable wireless powered resonator on soft contact lens",
-      "place": "Sapporo, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本札幌",
-        "ja": "日本・札幌"
-      },
-      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/"
-    },
-    {
-      "type": "conference",
-      "date": "2019-06",
-      "event": "10th International Conference on Molecular Electronics and Bioelectronics (M&BE10)",
-      "title": "A WIRELESS POWERED SMART SOFT CONTACT LENS FOR BIOAPPLICATIONS",
-      "place": "Nara, Japan",
-      "placeTranslations": {
-        "zh-Hans": "日本奈良",
-        "ja": "日本・奈良"
-      },
-      "link": "https://annex.jsap.or.jp/support/division/MandBE/670"
-    },
-    {
-      "type": "conference",
-      "date": "2019-05",
-      "event": "11th International Symposium on Microchemistry and Microsystems",
-      "title": "WIRELESS POWERED ELECTROCHROMIC SOFT CONTACT LENSES USING PEDOT:PSS COMPOSITE FILM",
-      "place": "Yangling, China",
-      "placeTranslations": {
-        "zh-Hans": "中国杨凌",
-        "ja": "中国・楊凌"
-      },
-      "link": "https://cheminas.chips.jp/studygroup/ismm/"
     }
   ]
 }

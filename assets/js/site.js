@@ -127,7 +127,7 @@
     if (paras) {
       paras.innerHTML = (a.paragraphs || []).map(function (t) {
         return "<p>" + esc(t) + "</p>";
-      }).join("");
+      }).join("") + (a.credentials ? '<p class="credentials">' + esc(a.credentials) + '</p>' : "");
     }
 
     var edu = $("#about-education");
@@ -175,7 +175,11 @@
       }).join("");
       return '<li class="research-item"><article>' +
         "<h3>" + esc(p.title) + "</h3>" +
+        (p.period ? '<p class="research-meta">' + esc(p.period) + ' · ' + esc(p.role) + '</p>' : "") +
         p.paragraphs.map(function (paragraph) { return "<p>" + esc(paragraph) + "</p>"; }).join("") +
+        (p.results ? '<dl class="research-results">' + p.results.map(function (result) {
+          return '<div><dt>' + esc(result.label) + '</dt><dd>' + esc(result.detail) + '</dd></div>';
+        }).join("") + '</dl>' : "") +
         '<ul class="research-tags">' + p.tags.map(function (tag) { return "<li>" + esc(tag) + "</li>"; }).join("") + "</ul>" +
         (links ? '<ul class="research-links">' + links + "</ul>" : "") +
         "</article></li>";
@@ -186,27 +190,33 @@
   var REFERENCE_COPY = {
     en: {
       noResearch: "Research descriptions will be listed here.",
+      skip: "Skip to main content", articles: "journal articles",
       email: "Email", conferenceLink: "Open official conference information",
       allPublications: "View all publications", fewerPublications: "Show fewer publications",
       allConferences: "View all conference presentations", fewerConferences: "Show fewer conference presentations",
       publisher: "Publisher link", accepted: "Accepted", datePending: "Publication date unverified",
+      published: "Published", earlyView: "Published · Early View", first: "First author", coFirst: "Co-first author", third: "Third author", fifth: "Fifth author",
       equalNote: "† Te Xiao and Hanzhe Zhang contributed equally as co-first authors.",
       soon: "Coming soon", noPublications: "Publications will be listed here.",
       noConferences: "Conference presentations will be listed here."
     },
     "zh-Hans": {
       noResearch: "研究介绍将在此列出。",
+      skip: "跳至正文", articles: "篇期刊论文",
       allPublications: "查看全部论文", fewerPublications: "收起论文",
       allConferences: "查看全部会议报告", fewerConferences: "收起会议报告",
       publisher: "出版社链接", accepted: "已接收", datePending: "出版日期待核实",
+      published: "已发表", earlyView: "已发表 · Early View", first: "第一作者", coFirst: "共同第一作者", third: "第三作者", fifth: "第五作者",
       equalNote: "† Te Xiao 与 Hanzhe Zhang 为共同第一作者，对论文贡献相同。",
       soon: "即将更新", noPublications: "论文将在此列出。", noConferences: "会议报告将在此列出。"
     },
     ja: {
       noResearch: "研究内容をこちらに掲載します。",
+      skip: "本文へ移動", articles: "件の学術誌論文",
       allPublications: "すべての論文を表示", fewerPublications: "論文を折りたたむ",
       allConferences: "すべての学会発表を表示", fewerConferences: "学会発表を折りたたむ",
       publisher: "出版社のページ", accepted: "掲載受理", datePending: "出版日未確認",
+      published: "掲載済み", earlyView: "掲載済み · Early View", first: "筆頭著者", coFirst: "共同筆頭著者", third: "第3著者", fifth: "第5著者",
       equalNote: "† Te Xiao と Hanzhe Zhang は共同筆頭著者であり、本論文に同等に貢献しました。",
       soon: "準備中", noPublications: "論文をこちらに掲載します。", noConferences: "学会発表をこちらに掲載します。"
     }
@@ -228,6 +238,9 @@
   function renderPublications(items, copy, locale) {
     var list = $("#pubs-list");
     var note = $("#pub-equal-note");
+    $("#pub-summary").textContent = items.length + " " + copy.articles + " · " +
+      items.filter(function (p) { return p.status === "Published"; }).length + " " + copy.published + " · " +
+      items.filter(function (p) { return p.status === "Accepted"; }).length + " " + copy.accepted;
     if (!items.length) {
       var li = document.createElement("li");
       li.className = "soon-li";
@@ -243,19 +256,20 @@
         var title = p.link
           ? '<a class="pub-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
           : esc(p.title);
-        var month = p.referenceMonth || (p.date.length === 7 ? p.date : "");
-        var date = month
-          ? new Intl.DateTimeFormat(locale, { year: "numeric", month: "long", timeZone: "UTC" })
-            .format(new Date(month + "-01T00:00:00Z"))
+        var date = p.date.length > 4
+          ? new Intl.DateTimeFormat(locale, { year: "numeric", month: "long", day: p.date.length === 10 ? "numeric" : undefined, timeZone: "UTC" })
+            .format(new Date(p.date + (p.date.length === 7 ? "-01" : "") + "T00:00:00Z"))
           : p.date.slice(0, 4);
         var citation = p.citation ? ", " + esc(p.citation) : "";
         var linkLabel = p.link && p.link.startsWith("https://doi.org/") ? "DOI" : copy.publisher;
         return '<li class="pub-entry"' + (p.anchor ? ' id="' + esc(p.anchor) + '"' : "") + '>' +
           '<span class="pub-main">' +
           (p.image ? '<span class="pub-thumb" data-src="' + esc(p.image) + '" data-alt="' + esc(p.imageAlt) + '"></span>' : "") +
-          '<span class="pub-t" lang="en">' + title + '<span class="pub-a">' + authors + "</span></span></span>" +
+          '<span class="pub-t"><span lang="en">' + title + '</span>' +
+          (p.contribution ? '<span class="pub-contribution">' + esc(copy[p.contribution]) + '</span>' : "") +
+          '<span class="pub-a" lang="en">' + authors + "</span></span></span>" +
           '<span class="pub-v"><span lang="en">' + esc(p.venue) + citation + "</span><br>" + esc(date) +
-          (p.status === "Accepted" ? '<br><strong class="pub-status">' + esc(copy.accepted) + "</strong>" : "") +
+          '<br><strong class="pub-status">' + esc(p.status === "Accepted" ? copy.accepted : p.earlyView ? copy.earlyView : copy.published) + '</strong>' +
           (p.referenceMonth ? '<br><span class="pub-status">' + esc(copy.datePending) + "</span>" : "") +
           (p.link ? '<br><a class="pub-doi" href="' + esc(p.link) + '" target="_blank" rel="noopener">' +
             esc(linkLabel) + " ↗</a>" : "") +

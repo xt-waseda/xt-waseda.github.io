@@ -1,12 +1,11 @@
 {
   "projects": [
     {
-      "title": "Smart Contact Lens for Intraocular Pressure Monitoring",
+      "title": "AMED — Smart Contact Lens for Intraocular Pressure Monitoring",
       "paragraphs": [
-        "This AMED-supported research focuses on real-time intraocular pressure monitoring using smart contact lenses.",
-        "The system integrates flexible PEDOT-based resistive sensors and wrinkled-gold capacitive sensors with parity–time (PT)-symmetric wireless readout. Antenna design and electromagnetic simulation were performed using HFSS, while sensor and wireless performance were evaluated through VNA and LCR measurements.",
-        "The sensors were integrated into hydrogel contact lenses in collaboration with Vizionfocus, followed by experimental validation using ex vivo porcine eyes and in vivo rabbit eyes.",
-        "The research led to publications in npj Flexible Electronics and ACS Sensors and an accepted paper in Advanced Materials Technologies. Waseda University also featured the research."
+        "I prepared PEDOT:PSS and PEDOT:PSS/PVA multilayer cracked resistive films, including acid treatment and formulation optimization for sensitivity, response stability, and optical transmission.",
+        "I developed capacitive pressure sensors using wrinkled-gold electrodes and an Ecoflex dielectric layer. I carried out photolithography, gold evaporation, electroplating, and ultrathin flexible antenna fabrication, with HFSS simulation, VNA / LCR measurements, and MATLAB analysis.",
+        "I contributed to PT-symmetric wireless readout integration. In collaboration with Vizionfocus, I was responsible for sensor preparation and post-integration performance testing and validation; the company performed embedding and integration into hydrogel lenses."
       ],
       "tags": [
         "PEDOT resistive sensors",
@@ -26,43 +25,61 @@
         },
         {
           "label": "Advanced Materials Technologies",
-          "href": "#publication-wrinkled-gold-antenna"
+          "href": "https://doi.org/10.1002/admt.71460"
         },
         {
           "label": "Waseda University research feature",
           "href": "https://www.waseda.jp/top/en/news/87095"
         }
+      ],
+      "period": "Jul 2023 – Mar 2026",
+      "role": "Core doctoral project · Research Assistant during the project",
+      "results": [
+        {
+          "label": "Resistive sensing",
+          "detail": "Minimum visible-light transmittance of the sensing films: 82.8%. With PT-symmetric wireless readout: system-level IOP response sensitivity of 47.31 Ω/mmHg, approximately 15 times the conventional scheme. Correlation with reference IOP: R² = 0.93 in ex vivo porcine eyes and 0.97 in in vivo rabbit eyes."
+        },
+        {
+          "label": "Capacitive sensing",
+          "detail": "Capacitance response sensitivity increased from 393 to 1057 ppm/mmHg compared with planar gold electrodes. Electrode resistance remained essentially stable at approximately 50% stretch. With PT-symmetric wireless readout, detection sensitivity improved by approximately 7.5 times relative to the conventional system."
+        }
       ]
     },
     {
-      "title": "Wireless Smart Contact Lens for Eye-Movement Recognition",
+      "title": "Moonshot Research Project — Contact Lens Biosensor Development",
       "paragraphs": [
-        "My current research explores wireless smart contact lenses for eye-movement recognition using flexible sensors.",
-        "We fabricate flexible sensors and microscale devices, then measure their electrical and wireless responses. The measurements guide the design of the sensing system."
+        "I participate in the development of new contact lens biosensors, taking responsibility for flexible sensing-element preparation, device processing, and prototype performance evaluation.",
+        "As part of the team exploring eye-movement recognition with wireless smart contact lenses, I conduct performance tests, collect and analyze experimental data, and evaluate device sensing responses. This work is ongoing."
       ],
       "tags": [
         "Flexible sensors",
         "Microfabrication",
         "Wireless sensing"
-      ]
+      ],
+      "period": "Oct 2026 – Present",
+      "role": "Research Assistant · Waseda University"
     },
     {
-      "title": "Flexible Antenna and Wireless Power Transfer",
+      "title": "Stretchable Gold Antenna Fabrication & Contact Lens Integration",
       "paragraphs": [
-        "For my master’s research, we fabricated flexible wrinkled-gold antennas and chemically bonded them to commercial soft contact lenses. The aim was to deliver power wirelessly to electronics on the lens.",
-        "Wireless power transfer was demonstrated by illuminating an LED integrated into the contact lens."
+        "I fabricated one- to three-turn horseshoe-shaped stretchable gold antennas on ITO conductive substrates, with approximately 25 μm linewidth and 7 μm gold thickness, to provide antenna devices for subsequent hydrogel contact lens integration.",
+        "Using EDOT electrochemical polymerization, I formed a PEDOT electrochemical adhesion layer and integrated gold antennas onto hydrogel contact lens surfaces. The devices remained attached under stretching and 180° twisting, with no obvious degradation of resonance characteristics after bonding.",
+        "I analyzed gold-electroplating experimental data, fabricated antennas, reported progress, and exchanged technical findings with the Japanese industry partner to support process development and prototype validation."
       ],
       "tags": [
-        "Wrinkled gold",
-        "Chemical bonding",
-        "Wireless power transfer"
+        "Gold electroplating",
+        "EDOT electrochemical polymerization",
+        "Stretchable antennas",
+        "Hydrogel integration"
       ],
       "links": [
         {
           "label": "Sensors and Actuators A: Physical",
           "href": "https://doi.org/10.1016/j.sna.2022.113766"
         }
-      ]
+      ],
+      "period": "Sep 2018 – Jun 2019",
+      "role": "Industry collaboration · Kojima Chemicals Co., Ltd. (小島化学薬品株式会社), Japan"
     }
   ]
 }

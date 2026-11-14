@@ -6,7 +6,8 @@
     "affiliation": "Waseda University",
     "headline": "From Flexible Sensors to Wireless Biomedical Systems.",
     "intro": [
-      "I’m Te Xiao (肖特), a researcher at Waseda University working on flexible biosensors and wireless sensing systems, with a particular focus on smart contact lenses for biomedical applications."
+      "I develop flexible electronics, biomedical sensors, and RF / wireless sensing systems at Waseda University, with a focus on smart contact lenses. My hands-on experience spans sensor and antenna fabrication, device integration, prototype testing, and experimental validation.",
+      "I am interested in industry R&D roles where I can turn device concepts into fabricated, measured, and validated prototypes."
     ],
     "facts": [
       {
@@ -32,53 +33,58 @@
     ],
     "about": {
       "paragraphs": [
-        "My research at Waseda began with wireless power transfer to soft contact lenses during my master’s studies. In my doctoral research, I turned to flexible biosensors and wireless readout for measuring signals from the eye.",
-        "My research interests include flexible sensor fabrication, wireless sensing, and the integration of electronic devices into soft biomedical systems."
+        "My work connects materials and microfabrication with wireless biomedical systems. I have developed PEDOT-based resistive sensors and wrinkled-gold capacitive sensors, fabricated stretchable miniature gold antennas, and contributed to PT-symmetric wireless readout integration.",
+        "In the AMED-supported smart contact lens project, I prepared sensors and evaluated integrated devices in collaboration with Vizionfocus. Since October 2026, I have worked as a Research Assistant on the Moonshot Research Project, fabricating flexible sensing elements and evaluating contact lens biosensor prototypes.",
+        "I also served as a Laboratory Teaching Assistant at Waseda University (November 2020–January 2021), supporting water-electrolysis experiments, equipment operation, and analysis of results."
       ],
       "education": [
         {
-          "period": "Apr 2020 – Apr 2026",
-          "degree": "Doctoral research",
+          "period": "Apr 2020 – Mar 2026",
+          "degree": "Doctoral program completed · Engineering",
           "org": "Waseda University, Graduate School of Information, Production and Systems",
-          "note": "Ph.D. degree expected: March 2027"
+          "note": "Doctoral program completed; Ph.D. in Engineering scheduled to be conferred on 15 March 2027. Bioengineering; smart contact lens systems for real-time intraocular pressure monitoring."
         },
         {
-          "period": "Apr 2018 – Apr 2020",
-          "degree": "Master’s studies",
+          "period": "Apr 2018 – Mar 2020",
+          "degree": "Master of Engineering",
           "org": "Waseda University, Graduate School of Information, Production and Systems",
-          "note": "Flexible antennas and wireless power transfer"
+          "note": "Bioengineering; stretchable gold antennas, flexible device integration, and wireless sensing."
         },
         {
           "period": "Sep 2011 – Jun 2015",
-          "degree": "Undergraduate studies in Mathematics and Applied Mathematics",
+          "degree": "Bachelor of Science · Mathematics and Applied Mathematics",
           "org": "China University of Mining and Technology, Beijing"
         }
       ],
       "skills": [
         {
-          "label": "Flexible Sensors & Materials",
-          "detail": "Resistive and capacitive sensors, PEDOT and PEDOT:PSS, wrinkled gold, hydrogels, PVA, PDMS, and Ecoflex."
+          "label": "Device Fabrication & Microfabrication",
+          "detail": "Photolithography, gold evaporation and electroplating, EDOT electrochemical polymerization, thin-film release and transfer, and hydrogel preparation; miniature gold antenna fabrication, flexible device integration, and prototyping."
         },
         {
-          "label": "Microfabrication",
-          "detail": "Photolithography, gold evaporation, electroplating, lift-off, EDOT polymerization, and ultrathin antenna fabrication."
+          "label": "Sensors & Flexible Electronics",
+          "detail": "Design and fabrication of resistive and capacitive sensors; PEDOT:PSS and PEDOT:PSS/PVA film preparation, acid treatment and formulation optimization; processing and integration of hydrogels, PDMS, Ecoflex, and wrinkled gold."
         },
         {
-          "label": "RF & Wireless Sensing",
-          "detail": "PT-symmetric wireless sensing, RF resonators, antenna design, impedance matching, and S-parameter analysis."
+          "label": "RF / Wireless Measurement & Simulation",
+          "detail": "HFSS electromagnetic simulation, LC resonant circuits, PT-symmetric wireless sensing, flexible antennas, resonance characterization and S-parameter measurements; VNA / LCR measurements, circuit soldering, and RF debugging."
         },
         {
-          "label": "Measurement & Validation",
-          "detail": "VNA and LCR measurements, circuit assembly, RF troubleshooting, device characterization, and animal-model validation."
+          "label": "Testing & Data Analysis",
+          "detail": "Sensor response and prototype performance evaluation; experimental data collection, curve fitting and visualization in MATLAB and DataGraph; ex vivo porcine-eye and in vivo rabbit-eye validation."
         },
         {
           "label": "Engineering Software",
-          "detail": "HFSS for electromagnetic simulation, Shapr3D for 3D modeling, MATLAB and DataGraph for analysis and visualization, and familiarity with Blender."
+          "detail": "HFSS for electromagnetic simulation; MATLAB and DataGraph for experimental analysis; Shapr3D for 3D modeling; familiarity with Blender."
         }
-      ]
+      ],
+      "credentials": "Languages: Japanese (JLPT N2) and English (CET-6). Driving qualifications: Chinese motor vehicle driving licence and Japanese ordinary motor vehicle driving licence."
     },
     "contact": {
-      "emails": ["xiaote@toki.waseda.jp", "xt852387090@gmail.com"],
+      "emails": [
+        "xiaote@toki.waseda.jp",
+        "xt852387090@gmail.com"
+      ],
       "emailNote": "A direct email address will be listed here when available.",
       "links": [
         {
