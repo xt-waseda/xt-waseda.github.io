@@ -2,21 +2,34 @@
   "activities": [
     {
       "type": "conference",
-      "date": "2026",
+      "date": "2026-05-30",
       "event": "68th Annual Meeting of the Japan Contact Lens Society (JCLS)",
-      "title": "IOP Smart Lens with PT-Symmetric Systems",
-      "place": "Tokyo, Japan",
+      "title": "Smart Contact Lens for Real-Time Monitoring of Intraocular Pressure by Parity-Time Symmetry Wireless Sensing System",
+      "place": "TAKANAWA GATEWAY Convention Center, Tokyo, Japan",
       "placeTranslations": {
         "zh-Hans": "日本东京",
         "ja": "日本・東京"
       },
       "featured": true,
-      "link": "https://www.congre.co.jp/jcls2026/en/dl/program_timetable.pdf"
+      "link": "https://www.congre.co.jp/jcls2026/en/dl/program_timetable.pdf",
+      "id": "conference-01",
+      "authors": [
+        "Te Xiao",
+        "Hanzhe Zhang",
+        "Taiki Takamatsu",
+        "Atsushige Ashimori",
+        "Saman Azhari",
+        "Kazuhiro Kimura",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "poster",
+      "abstractNumber": "JP3-3"
     },
     {
       "type": "conference",
-      "date": "2026",
-      "event": "Nature Conference on Flexible Electronics",
+      "date": "2026-04-08",
+      "event": "Nature Conference on Flexible Electronics – Transforming Technology for Human Health",
       "title": "Wrinkled Gold Capacitive Sensor for Real-Time Intraocular Pressure Monitoring with PT-Symmetric Wireless Sensing",
       "place": "Xi’an, China",
       "placeTranslations": {
@@ -24,47 +37,478 @@
         "ja": "中国・西安"
       },
       "featured": true,
-      "link": "https://natureconferences.streamgo.live/flexible-electronics-transforming-technology-for-human-health/register"
+      "link": "https://natureconferences.streamgo.live/flexible-electronics-transforming-technology-for-human-health/register",
+      "id": "conference-02",
+      "authors": [
+        "Te Xiao",
+        "Zezheng Chen",
+        "Hanzhe Zhang",
+        "Taiki Takamatsu",
+        "Saman Azhari",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "poster",
+      "endDate": "2026-04-10"
     },
     {
       "type": "conference",
-      "date": "2025",
+      "date": "2025-11-12",
+      "event": "35th Annual Meeting of the Materials Research Society of Japan (MRS-J)",
+      "title": "Wearable, stretchable, wireless strain sensors for intraocular ocular pressure measurement",
+      "place": "Kitakyushu, Japan",
+      "link": "https://www.mrs-j.org/meeting2025/jp/prg/programList.php?mode=1&sid=D-1&wday=12",
+      "id": "conference-06",
+      "featured": false,
+      "authors": [
+        "Hanzhe ZHANG",
+        "Xiao TE",
+        "Saman AZHARI",
+        "Takeo MIYAKE"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral",
+      "abstractNumber": "D1-O12-006"
+    },
+    {
+      "type": "conference",
+      "date": "2025-05-20",
       "event": "35th Anniversary World Congress on Biosensors",
-      "title": "Real-Time Intraocular Pressure Monitoring using an Integrated Wrinkled Gold-Based Capacitive Sensor with a Parity Time Symmetry Wireless Amplification System",
+      "title": "Real-Time Intraocular Pressure Monitoring using an integrated Wrinkled Gold-Based Capacitive Sensor with a Parity Time Symmetry Wireless Amplification System",
       "place": "Lisbon, Portugal",
       "placeTranslations": {
         "zh-Hans": "葡萄牙里斯本",
         "ja": "ポルトガル・リスボン"
       },
       "featured": true,
-      "link": "https://www.elsevier.com/events/conferences/all/anniversary-world-congress-on-biosensors/previous-events-and-testimonials"
+      "link": "https://www.elsevier.com/events/conferences/all/anniversary-world-congress-on-biosensors/previous-events-and-testimonials",
+      "id": "conference-03",
+      "authors": [
+        "Te Xiao",
+        "Zezheng Chen",
+        "Hanzhe Zhang",
+        "Taiki Takamatsu",
+        "Saman Azhari",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "poster",
+      "endDate": "2025-05-22"
     },
     {
       "type": "conference",
-      "date": "2023",
+      "date": "2025-05-20",
+      "event": "35th Anniversary World Congress on Biosensors",
+      "title": "Real-Time Eye Pressure Monitoring via Integration of Resistive Smart Contact Lens Sensor with Parity Time Symmetry Wireless System for Enhanced Sensitivity",
+      "place": "",
+      "link": "https://www.elsevier.com/events/conferences/all/anniversary-world-congress-on-biosensors/previous-events-and-testimonials",
+      "id": "conference-07",
+      "featured": false,
+      "authors": [
+        "Hanzhe Zhang",
+        "Te Xiao",
+        "Saman Azhari",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "poster",
+      "endDate": "2025-05-22"
+    },
+    {
+      "type": "conference",
+      "date": "2024-05",
+      "event": "7th Event of the Young Researchers Society for Flexible and Stretchable Electronics",
+      "title": "Smart Contact Lenses with MXene Coating for Electromagnetic Interference Shielding",
+      "place": "",
+      "link": "https://fsejp.weebly.com/7th-event-may-23_24-2024.html",
+      "id": "conference-08",
+      "featured": false,
+      "authors": [
+        "Lunjie Hu",
+        "Saman Azhari",
+        "Hanzhe Zhang",
+        "Te Xiao",
+        "Yang Cui",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral"
+    },
+    {
+      "type": "conference",
+      "date": "2023-11-27",
       "event": "MRS Fall Meeting & Exhibit",
-      "title": "Wireless, Highly Sensitive Biosensors on Contact Lenses for Intraocular Pressure Monitoring",
+      "title": "Wireless, highly sensitive biosensors on contact lenses for intraocular pressure monitoring",
       "place": "Boston, USA",
       "placeTranslations": {
         "zh-Hans": "美国波士顿",
         "ja": "米国・ボストン"
       },
       "featured": true,
-      "link": "https://www.mrs.org/docs/default-source/meetings-events/fall-meetings/2023/f23-abstract-book.pdf?sfvrsn=74480d09_2"
+      "link": "https://www.mrs.org/meetings-events/annual-meetings/archive/meeting/presentations/view/2023-mrs-fall-meeting/2023-mrs-fall-meeting-3955373",
+      "id": "conference-04",
+      "authors": [
+        "Te Xiao",
+        "Qi Zhang",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "poster",
+      "presenter": "Te Xiao",
+      "abstractNumber": "SB05.03.16"
     },
     {
       "type": "conference",
-      "date": "2022",
+      "date": "2023-03-15",
+      "event": "70th JSAP Spring Meeting",
+      "title": "Wearable and stretchable strain sensors for intraocular ocular pressure measurement",
+      "place": "",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2023s/english/operationpolicy/",
+      "id": "conference-09",
+      "featured": false,
+      "authors": [
+        "Hanzhe Zhang",
+        "Te Xiao",
+        "Azhari Saman",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral"
+    },
+    {
+      "type": "conference",
+      "date": "2022-05-24",
       "event": "MRS Spring Meeting & Exhibit",
-      "title": "Wireless, Highly Sensitive and Diagnostic Contact Lens Sensors",
-      "place": "Honolulu, USA (Online)",
+      "title": "Wireless, Highly sensitive, and Diagnostic Contact Lens Sensors",
+      "place": "Online",
       "hostCity": "Honolulu, USA",
       "placeTranslations": {
-        "zh-Hans": "美国火奴鲁鲁（线上）",
-        "ja": "米国・ホノルル（オンライン）"
+        "zh-Hans": "线上",
+        "ja": "オンライン"
       },
       "featured": true,
-      "link": "https://www.mrs.org/docs/default-source/meetings-events/spring-meetings/2022/program.pdf?sfvrsn=469d650e_6"
+      "link": "https://www.mrs.org/docs/default-source/meetings-events/spring-meetings/2022/program.pdf?sfvrsn=469d650e_6",
+      "id": "conference-05",
+      "authors": [
+        "Te Xiao",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "abstractNumber": "SB06.08.03"
+    },
+    {
+      "type": "conference",
+      "date": "2021-11-29",
+      "event": "9th International Symposium on Surface Science (ISSS-9)",
+      "title": "A wireless, stretchable sensor lens for intraocular pressure measuring",
+      "place": "Online",
+      "link": "https://www.jvss.jp/isss9/isss9_FinalProgram.pdf",
+      "id": "conference-10",
+      "featured": false,
+      "authors": [
+        "Te Xiao",
+        "Qi Zhang",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "oral",
+      "abstractNumber": "29aB-2"
+    },
+    {
+      "type": "conference",
+      "date": "2021-10-26",
+      "event": "34th International Microprocesses and Nanotechnology Conference (MNC 2021)",
+      "title": "Highly sensitive passive glucose sensor based on parity-time (PT) symmetric resonators",
+      "place": "Japan",
+      "id": "conference-11",
+      "featured": false,
+      "authors": [
+        "Taiki Takamatsu",
+        "Yin Sijie",
+        "Te Xiao",
+        "Lunjie Hu",
+        "Yang Cui",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral",
+      "endDate": "2021-10-29"
+    },
+    {
+      "type": "conference",
+      "date": "2021-10-26",
+      "event": "34th International Microprocesses and Nanotechnology Conference (MNC 2021)",
+      "title": "Wireless electrochromic soft contact lenses using PEDOT:PSS composite film with Non-interfering Dual-band WPT system",
+      "place": "Japan",
+      "id": "conference-12",
+      "featured": false,
+      "authors": [
+        "Lunjie Hu",
+        "Taiki Takamatsu",
+        "Lu Chen",
+        "Te Xiao",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral",
+      "endDate": "2021-10-29"
+    },
+    {
+      "type": "conference",
+      "date": "2021-09-12",
+      "event": "82nd JSAP Autumn Meeting",
+      "title": "Wireless, electrochromic soft contact lenses using PEDOT:PSS composite film",
+      "place": "Online",
+      "link": "https://www.jstage.jst.go.jp/article/jsapmeeting/2021.2/0/2021.2_2436/_pdf",
+      "id": "conference-13",
+      "featured": false,
+      "authors": [
+        "Lunjie Hu",
+        "Taiki Takamatsu",
+        "Lu Chen",
+        "Te Xiao",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral"
+    },
+    {
+      "type": "conference",
+      "date": "2021-09-12",
+      "event": "82nd JSAP Autumn Meeting",
+      "title": "Wireless, stretchable contact lens sensors for intraocular pressure monitoring",
+      "place": "Online",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2021a/english/program/",
+      "id": "conference-14",
+      "featured": false,
+      "authors": [
+        "Te Xiao",
+        "Qi Zhang",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "oral"
+    },
+    {
+      "type": "conference",
+      "date": "2021-09-10",
+      "event": "82nd JSAP Autumn Meeting",
+      "title": "PT 対称性共振結合回路を用いた超高感度な生体モニタリングシステムの開発",
+      "titleLang": "ja",
+      "place": "Online",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2021a/english/program/",
+      "id": "conference-15",
+      "featured": false,
+      "authors": [
+        "高松泰輝",
+        "殷思杰",
+        "肖特",
+        "胡伦杰",
+        "崔洋",
+        "张琪",
+        "三宅丈雄"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral"
+    },
+    {
+      "type": "conference",
+      "date": "2021-06-15",
+      "event": "2nd Event of the Young Researchers Society for Flexible and Stretchable Electronics",
+      "title": "Parity-Time symmetrically resonant coupling system for wearable biosensors",
+      "place": "Online",
+      "link": "https://fsejp.weebly.com/uploads/1/3/3/5/133572570/fse%E8%8B%A5%E6%89%8B_2ndevent_program_public.pdf",
+      "id": "conference-16",
+      "featured": false,
+      "authors": [
+        "Taiki Takamatsu",
+        "Yin Shijie",
+        "Te Xiao",
+        "Lunjie Hu",
+        "Qi Zhang",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "endDate": "2021-06-16"
+    },
+    {
+      "type": "conference",
+      "date": "2021-03-16",
+      "event": "68th JSAP Spring Meeting",
+      "title": "Wireless, stretchable contact lens sensors for intraocular pressure monitoring",
+      "place": "Japan",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2021s/english/operationpolicy/",
+      "id": "conference-17",
+      "featured": false,
+      "authors": [
+        "Qi Zhang",
+        "Te Xiao",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "presentationType": "oral",
+      "endDate": "2021-03-19"
+    },
+    {
+      "type": "conference",
+      "date": "2020-09-11",
+      "event": "81st JSAP Autumn Meeting",
+      "title": "コンタクトレンズに搭載可能な無線給電型空気亜鉛電源の開発",
+      "titleLang": "ja",
+      "place": "Online",
+      "link": "https://www.jstage.jst.go.jp/article/jsapmeeting/2020.2/0/2020.2_1695/_pdf",
+      "id": "conference-18",
+      "featured": false,
+      "authors": [
+        "高松泰輝",
+        "肖特",
+        "胡伦杰",
+        "澍杰方",
+        "熊本浩希",
+        "三宅丈雄"
+      ],
+      "role": "coAuthor"
+    },
+    {
+      "type": "conference",
+      "date": "2019-12-01",
+      "event": "MRS Fall Meeting & Exhibit",
+      "title": "A wireless powered smart soft contact lens for bioapplications",
+      "place": "USA",
+      "id": "conference-19",
+      "featured": false,
+      "authors": [
+        "Taiki Takamatsu",
+        "Te Xiao",
+        "Lunjie Hu",
+        "Fang Shujie",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "endDate": "2019-12-06"
+    },
+    {
+      "type": "conference",
+      "date": "2019-11-14",
+      "event": "4th International Symposium on Biomedical Engineering (ISBE2019)",
+      "title": "Wireless, wearable power source printed on moist, soft contact lenses",
+      "place": "Japan",
+      "link": "https://www.rie.shizuoka.ac.jp/~conference/isbe2019/",
+      "id": "conference-20",
+      "featured": false,
+      "authors": [
+        "Taiki Takamatsu",
+        "Te Xiao",
+        "Lunjie Hu",
+        "Fang Shujie",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor"
+    },
+    {
+      "type": "conference",
+      "date": "2019-09-18",
+      "event": "80th JSAP Autumn Meeting",
+      "title": "A wireless-powered biobooster on soft contact lens",
+      "place": "Japan",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/",
+      "id": "conference-21",
+      "featured": false,
+      "authors": [
+        "Fang Shujie",
+        "Taiki Takamatsu",
+        "Te Xiao",
+        "Lunjie Hu",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "endDate": "2019-09-21"
+    },
+    {
+      "type": "conference",
+      "date": "2019-09-18",
+      "event": "80th JSAP Autumn Meeting",
+      "title": "Transparent, micropatterned Au mesh coil for wireless power transfer between eyeglass/contact lens",
+      "place": "Japan",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/",
+      "id": "conference-22",
+      "featured": false,
+      "authors": [
+        "Lunjie Hu",
+        "Taiki Takamatsu",
+        "Te Xiao",
+        "Lu Chen",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor",
+      "endDate": "2019-09-21"
+    },
+    {
+      "type": "conference",
+      "date": "2019-09-18",
+      "event": "80th JSAP Autumn Meeting",
+      "title": "A stretchable wireless powered resonator on soft contact lens",
+      "place": "Japan",
+      "link": "https://meeting.jsap.or.jp/archive/jsap2019a/english/program/",
+      "id": "conference-23",
+      "featured": false,
+      "authors": [
+        "Te Xiao",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Lu Chen",
+        "Takeo Miyake"
+      ],
+      "role": "first",
+      "presentationType": "oral",
+      "endDate": "2019-09-21"
+    },
+    {
+      "type": "conference",
+      "date": "2019-06-27",
+      "event": "10th International Conference on Molecular Electronics and Bioelectronics (M&BE10)",
+      "title": "A WIRELESS POWERED SMART SOFT CONTACT LENS FOR BIOAPPLICATIONS",
+      "place": "Japan",
+      "link": "https://annex.jsap.or.jp/support/division/MandBE/670",
+      "id": "conference-24",
+      "featured": false,
+      "authors": [
+        "Taiki Takamatsu",
+        "Lu Chen",
+        "Lunjie Hu",
+        "Te Xiao",
+        "Shujie Fang",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor"
+    },
+    {
+      "type": "conference",
+      "date": "2019-05-17",
+      "event": "11th International Symposium on Microchemistry and Microsystems",
+      "title": "WIRELESS POWERED ELECTROCHROMIC SOFT CONTACT LENSES USING PEDOT:PSS COMPOSITE FILM",
+      "place": "China",
+      "link": "https://cheminas.chips.jp/studygroup/ismm/",
+      "id": "conference-25",
+      "featured": false,
+      "authors": [
+        "Lu Chen",
+        "Taiki Takamatsu",
+        "Lunjie Hu",
+        "Te Xiao",
+        "Takeo Miyake"
+      ],
+      "role": "coAuthor"
     }
   ]
 }

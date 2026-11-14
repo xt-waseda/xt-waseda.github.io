@@ -193,7 +193,8 @@
       skip: "Skip to main content", articles: "journal articles",
       email: "Email", conferenceLink: "Open official conference information",
       allPublications: "View all publications", fewerPublications: "Show fewer publications",
-      allConferences: "View all conference presentations", fewerConferences: "Show fewer conference presentations",
+      allConferences: "View All Conferences", fewerConferences: "Show Fewer",
+      coAuthor: "Co-author", presenter: "Presenter", poster: "Poster", oral: "Oral presentation",
       publisher: "Publisher link", accepted: "Accepted", datePending: "Publication date unverified",
       published: "Published", earlyView: "Published · Early View", first: "First author", coFirst: "Co-first author", third: "Third author", fifth: "Fifth author",
       equalNote: "† Te Xiao and Hanzhe Zhang contributed equally as co-first authors.",
@@ -204,7 +205,8 @@
       noResearch: "研究介绍将在此列出。",
       skip: "跳至正文", articles: "篇期刊论文",
       allPublications: "查看全部论文", fewerPublications: "收起论文",
-      allConferences: "查看全部会议报告", fewerConferences: "收起会议报告",
+      allConferences: "查看全部会议", fewerConferences: "收起",
+      coAuthor: "共同作者", presenter: "报告人", poster: "海报", oral: "口头报告",
       publisher: "出版社链接", accepted: "已接收", datePending: "出版日期待核实",
       published: "已发表", earlyView: "已发表 · Early View", first: "第一作者", coFirst: "共同第一作者", third: "第三作者", fifth: "第五作者",
       equalNote: "† Te Xiao 与 Hanzhe Zhang 为共同第一作者，对论文贡献相同。",
@@ -214,7 +216,8 @@
       noResearch: "研究内容をこちらに掲載します。",
       skip: "本文へ移動", articles: "件の学術誌論文",
       allPublications: "すべての論文を表示", fewerPublications: "論文を折りたたむ",
-      allConferences: "すべての学会発表を表示", fewerConferences: "学会発表を折りたたむ",
+      allConferences: "すべての学会記録を表示", fewerConferences: "折りたたむ",
+      coAuthor: "共著者", presenter: "発表者", poster: "ポスター", oral: "口頭発表",
       publisher: "出版社のページ", accepted: "掲載受理", datePending: "出版日未確認",
       published: "掲載済み", earlyView: "掲載済み · Early View", first: "筆頭著者", coFirst: "共同筆頭著者", third: "第3著者", fifth: "第5著者",
       equalNote: "† Te Xiao と Hanzhe Zhang は共同筆頭著者であり、本論文に同等に貢献しました。",
@@ -295,6 +298,15 @@
     } else {
       list.innerHTML = items.map(function (a) {
         var place = (a.placeTranslations && a.placeTranslations[locale]) || a.place;
+        var authors = (a.authors || []).map(function (author) {
+          var name = author.replace(/[\s-]/g, "").toLowerCase();
+          return ["texiao", "xiaote", "肖特"].includes(name) ? "<strong>" + esc(author) + "</strong>" : esc(author);
+        }).join(", ");
+        var details = [fmtDate(a.date) + (a.endDate ? " – " + fmtDate(a.endDate) : "")];
+        if (a.role) details.push(copy[a.role]);
+        if (a.presenter === "Te Xiao") details.push(copy.presenter);
+        if (a.presentationType) details.push(copy[a.presentationType]);
+        if (a.abstractNumber) details.push(a.abstractNumber);
         var link = a.link ? '<a class="conference-link" href="' + esc(a.link) +
           '" target="_blank" rel="noopener" aria-label="' + esc(copy.conferenceLink + " · " + a.event) +
           '"><span aria-hidden="true">↗</span></a>' : "";
@@ -302,15 +314,22 @@
           '<div class="tl-date">' + esc(a.date.slice(0, 4)) + "</div>" +
           '<div class="tl-body"><p class="tl-event"><span lang="en">' + esc(a.event) + "</span>" + link + "</p>" +
           '<h3 lang="' + esc(a.titleLang || "en") + '">' + esc(a.title) + "</h3>" +
+          '<p class="tl-place">' + esc(details.join(" · ")) + "</p>" +
+          (authors ? '<p class="tl-place" lang="' + esc(a.titleLang || "en") + '">' + authors + "</p>" : "") +
           (place ? '<p class="tl-place">' + esc(place) + "</p>" : "") +
           "</div></article>";
       }).join("");
     }
+    var selected = items.filter(function (a) { return a.featured; }).slice(0, 5);
+    items.filter(function (a) { return a.role === "first" || a.presenter === "Te Xiao"; }).concat(items).forEach(function (a) {
+      if (selected.length < 5 && !selected.includes(a)) selected.push(a);
+    });
     var extra = items.reduce(function (indices, a, i) {
-      if (!a.featured) indices.push(i);
+      if (!selected.includes(a)) indices.push(i);
       return indices;
     }, []);
-    bindDisclosure("#act-toggle", $$(".tl-item", list), extra, copy.allConferences, copy.fewerConferences);
+    bindDisclosure("#act-toggle", $$(".tl-item", list), extra,
+      copy.allConferences + " (" + items.length + ")", copy.fewerConferences);
   }
 
   function initLanguage(site, profile, projects, pubs, activities, awards, translations) {
