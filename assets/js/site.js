@@ -193,6 +193,7 @@
       skip: "Skip to main content", articles: "journal articles",
       email: "Email", conferenceLink: "Open official conference information",
       allPublications: "View all publications", fewerPublications: "Show fewer publications",
+      imageDetails: "Image source and license",
       allConferences: "View All Conferences", fewerConferences: "Show Fewer",
       coAuthor: "Co-author", presenter: "Presenter", poster: "Poster", oral: "Oral presentation",
       publisher: "Publisher link", accepted: "Accepted", datePending: "Publication date unverified",
@@ -205,6 +206,7 @@
       noResearch: "研究介绍将在此列出。",
       skip: "跳至正文", articles: "篇期刊论文",
       allPublications: "查看全部论文", fewerPublications: "收起论文",
+      imageDetails: "图片来源与许可",
       allConferences: "查看全部会议", fewerConferences: "收起",
       coAuthor: "共同作者", presenter: "报告人", poster: "海报", oral: "口头报告",
       publisher: "出版社链接", accepted: "已接收", datePending: "出版日期待核实",
@@ -216,6 +218,7 @@
       noResearch: "研究内容をこちらに掲載します。",
       skip: "本文へ移動", articles: "件の学術誌論文",
       allPublications: "すべての論文を表示", fewerPublications: "論文を折りたたむ",
+      imageDetails: "画像の出典と利用条件",
       allConferences: "すべての学会記録を表示", fewerConferences: "折りたたむ",
       coAuthor: "共著者", presenter: "発表者", poster: "ポスター", oral: "口頭発表",
       publisher: "出版社のページ", accepted: "掲載受理", datePending: "出版日未確認",
@@ -276,8 +279,12 @@
           ? '<figure class="pub-figure"><span class="pub-thumb" data-src="' + esc(p.image) +
             '" data-alt="' + esc(p.imageAlt) + '" data-width="' + esc(p.imageWidth || "") +
             '" data-height="' + esc(p.imageHeight || "") + '"></span><figcaption class="pub-image-credit">' +
-            (p.imageCredit ? '<span>' + esc(p.imageCredit) + "</span>" : "") +
+            '<details class="pub-image-details"><summary aria-label="' +
+            esc(copy.imageDetails + ": " + (p.imageCreditShort || "")) + '">' +
+            '<span>' + esc(p.imageCreditShort || "") + '</span></summary>' +
+            (p.imageCredit ? '<span class="pub-image-credit-full">' + esc(p.imageCredit) + "</span>" : "") +
             (imageLinks ? '<span class="pub-image-links">' + imageLinks + "</span>" : "") +
+            "</details>" +
             "</figcaption></figure>"
           : "";
         return '<li class="pub-entry"' + (p.anchor ? ' id="' + esc(p.anchor) + '"' : "") + '>' +
