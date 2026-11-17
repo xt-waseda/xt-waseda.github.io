@@ -265,12 +265,26 @@
           : p.date.slice(0, 4);
         var citation = p.citation ? ", " + esc(p.citation) : "";
         var linkLabel = p.link && p.link.startsWith("https://doi.org/") ? "DOI" : copy.publisher;
+        var imageLinks = p.link
+          ? '<a class="pub-doi" href="' + esc(p.link) + '" target="_blank" rel="noopener">DOI ↗</a>'
+          : "";
+        if (p.imagePolicyUrl) {
+          imageLinks += '<a class="pub-doi" href="' + esc(p.imagePolicyUrl) +
+            '" target="_blank" rel="noopener">' + esc(p.imagePolicyLabel || "Reuse terms") + " ↗</a>";
+        }
+        var imageMarkup = p.image
+          ? '<figure class="pub-figure"><span class="pub-thumb" data-src="' + esc(p.image) +
+            '" data-alt="' + esc(p.imageAlt) + '" data-width="' + esc(p.imageWidth || "") +
+            '" data-height="' + esc(p.imageHeight || "") + '"></span><figcaption class="pub-image-credit">' +
+            (p.imageCredit ? '<span>' + esc(p.imageCredit) + "</span>" : "") +
+            (imageLinks ? '<span class="pub-image-links">' + imageLinks + "</span>" : "") +
+            "</figcaption></figure>"
+          : "";
         return '<li class="pub-entry"' + (p.anchor ? ' id="' + esc(p.anchor) + '"' : "") + '>' +
-          '<span class="pub-main">' +
-          (p.image ? '<span class="pub-thumb" data-src="' + esc(p.image) + '" data-alt="' + esc(p.imageAlt) + '"></span>' : "") +
+          '<div class="pub-main">' + imageMarkup +
           '<span class="pub-t"><span lang="en">' + title + '</span>' +
           (p.contribution ? '<span class="pub-contribution">' + esc(copy[p.contribution]) + '</span>' : "") +
-          '<span class="pub-a" lang="en">' + authors + "</span></span></span>" +
+          '<span class="pub-a" lang="en">' + authors + "</span></span></div>" +
           '<span class="pub-v"><span lang="en">' + esc(p.venue) + citation + "</span><br>" + esc(date) +
           '<br><strong class="pub-status">' + esc(p.status === "Accepted" ? copy.accepted : p.earlyView ? copy.earlyView : copy.published) + '</strong>' +
           (p.referenceMonth ? '<br><span class="pub-status">' + esc(copy.datePending) + "</span>" : "") +
@@ -282,7 +296,17 @@
       }).join("");
     }
     $$(".pub-thumb", list).forEach(function (box) {
-      mountImage(box, box.dataset.src, box.dataset.alt);
+      if (!box.dataset.src) return;
+      var img = new Image();
+      img.alt = box.dataset.alt || "";
+      img.decoding = "async";
+      img.loading = "lazy";
+      if (Number(box.dataset.width) > 0) img.width = Number(box.dataset.width);
+      if (Number(box.dataset.height) > 0) img.height = Number(box.dataset.height);
+      img.onload = function () { box.classList.add("has-image"); };
+      img.onerror = function () { img.remove(); };
+      box.appendChild(img);
+      img.src = box.dataset.src;
     });
     note.hidden = !items.some(function (p) { return p.equalContributors && p.equalContributors.length; });
     note.textContent = note.hidden ? "" : copy.equalNote;
